@@ -11,8 +11,8 @@ I find this game to be really fun to play in group settings. There's just a coup
 ## Solutions
 
 1. No more repeats. If you play the "Movies" deck for example, then play some other decks and then come back, you won't get any cards you've played before
-2. It's free. Use the existing decks and make your own
-3. Building your own deck is as simple as adding to a google (excel) sheet
+2. It's free. Use the existing decks or make your own
+3. Building your own deck is as simple as adding words to a google (excel) sheet
 
 ## Setup
 1. Create a public or unlisted (recommended) google sheet
