@@ -1,12 +1,12 @@
 # Heads Up v2.0
 
-Fork https://codesandbox.io/s/m30pr0jwwp and add to home screen!
+Fork https://codesandbox.io/s/m30pr0jwwp. Open the link to the project and add to home screen!
 
-This React web app is inspired by the native iOS and Android game,[_"Heads Up!"_][1]
+This React mobile web app is inspired by the native iOS and Android game,[_"Heads Up!"_][1]
 
 ## Introduction
 
-I find the mobile game _"Heads Up"_ to be really fun to play in group settings. There's just a couple of things about the original that I don't like:
+I find the mobile game _"Heads Up"_ to be really fun to play in group settings. There's just a couple of things about the original that I don't care for:
 
 * Ability to get repeat cards from a deck per playing session
 * $1.00 for paid decks
