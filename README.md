@@ -12,7 +12,7 @@ I find this game to be really fun to play in group settings. There's just a coup
 * $1.00 for paid decks
 * The "Build-your-own-deck" mode isn't easy to set up on mobile
 
-#### Solutions
+#### Solutions:
 
 * No more repeats per playing session
 * It's free -- Use the [existing decks][3] or make your own
