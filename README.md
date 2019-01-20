@@ -1,5 +1,7 @@
 # Heads Up v2.0
 
+![Screenshot of game](game_screenshot.PNG) ![Sheet example](sheet_example.PNG)
+
 Fork https://codesandbox.io/s/m30pr0jwwp. Open the link to the project and add to home screen!
 
 This React mobile web app is inspired by the native iOS and Android game,[_"Heads Up!"_][1]
@@ -19,7 +21,6 @@ I find the mobile game _"Heads Up"_ to be really fun to play in group settings. 
 * Building your own deck is as simple as adding words to a google sheet
 
 ## Setup
-![Screenshot of game](game_screenshot.PNG) ![Sheet example](sheet_example.PNG)
 1. Create a google sheet
 2. Each column is a deck, the name of the deck must be in the top row
 3. [Request an API key][2]
