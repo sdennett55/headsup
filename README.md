@@ -1,5 +1,7 @@
 # Heads Up v2.0
 
+Fork or use: https://m30pr0jwwp.codesandbox.io/
+
 This React web app is inspired by the native iOS and Android game,[_"Heads Up!"_][1]
 
 I find this game to be really fun to play in group settings. There's just a couple of things about the original that I don't like:
