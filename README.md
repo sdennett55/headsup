@@ -15,7 +15,7 @@ I find the mobile game _"Heads Up"_ to be really fun to play in group settings. 
 #### Solutions:
 
 * No more repeats per playing session
-* It's free -- Use the [example deck][3] or make your own
+* It's free -- Use/fork the [example deck][3] or make your own
 * Building your own deck is as simple as adding words to a google sheet
 
 ## Setup
