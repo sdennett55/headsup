@@ -23,7 +23,7 @@ I find the mobile game _"Heads Up"_ to be really fun to play in group settings. 
 1. Create a google sheet
 2. Each column is a deck, the name of the deck must be in the top row
 3. [Request an API key][2]
-4. Replace your new API key with `API_KEY` in `componentDidMount`
+4. Replace your new API key with `API_KEY` and the sheet ID with `SHEET_ID` in `componentDidMount`
 
 ## How to Play
 
@@ -37,6 +37,8 @@ Almost exactly like the original:
 ## Community Decks
 
 Be sure to submit any decks you've made and I'll add the links below.
+
+SHEET_ID
 
 [1]: https://www.warnerbros.com/videogame/heads
 [2]: https://developers.google.com/sheets/api/guides/authorizing#APIKey
