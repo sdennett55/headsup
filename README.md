@@ -22,6 +22,7 @@ I find this game to be really fun to play in group settings. There's just a coup
 2. Each column is a deck, the name of the deck must be in the top row
 3. [Request an API key][2]
 4. Replace your new API key with `API_KEY` in `componentDidMount`
+5. Add app to home screen
 
 ## How to Play
 
