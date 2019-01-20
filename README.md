@@ -1,6 +1,6 @@
 # Heads Up v2.0
 
-This React web app is inspired by the native iOS and Android game, _"Heads Up!"_
+This React web app is inspired by the native iOS and Android game,[_"Heads Up!"_][1]
 
 I find this game to be really fun to play in group settings. There's just a couple of things about the original that I don't like:
 
@@ -16,9 +16,9 @@ I find this game to be really fun to play in group settings. There's just a coup
 
 ## Setup
 ![Screenshot of game](game_screenshot.PNG) ![Sheet example](sheet_example.PNG)
-1. Create a public or unlisted (recommended) google sheet
+1. Create a google sheet
 2. Each column is a deck, the name of the deck must be in the top row
-3. [Request an API key][1]
+3. [Request an API key][2]
 4. Replace your new API key with `API_KEY` in `componentDidMount`
 
 ## How to Play
@@ -30,4 +30,5 @@ Almost exactly like the original:
 * Tilt phone down for correct, up for skip
 * __Shake the phone back-and-forth to exit the game or pre-game countdown at any time__
 
-[1]: https://developers.google.com/sheets/api/guides/authorizing#APIKey
+[1]: https://www.warnerbros.com/videogame/heads
+[2]: https://developers.google.com/sheets/api/guides/authorizing#APIKey
