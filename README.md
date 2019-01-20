@@ -1,6 +1,6 @@
 # Heads Up v2.0
 
-Fork or use: https://m30pr0jwwp.codesandbox.io/
+Fork or check out: https://m30pr0jwwp.codesandbox.io/
 
 This React web app is inspired by the native iOS and Android game,[_"Heads Up!"_][1]
 
