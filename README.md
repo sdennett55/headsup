@@ -1,6 +1,6 @@
 # Heads Up v2.0
 
-Fork or check out https://m30pr0jwwp.codesandbox.io/ and add to home screen!
+Fork https://codesandbox.io/s/m30pr0jwwp and add to home screen!
 
 This React web app is inspired by the native iOS and Android game,[_"Heads Up!"_][1]
 
@@ -15,7 +15,7 @@ I find this game to be really fun to play in group settings. There's just a coup
 #### Solutions:
 
 * No more repeats per playing session
-* It's free -- Use the [existing decks][3] or make your own
+* It's free -- Use the [example decks][3] or make your own
 * Building your own deck is as simple as adding words to a google sheet
 
 ## Setup
@@ -33,6 +33,10 @@ Almost exactly like the original:
 * Put phone on forehead and wait for game to start
 * Tilt phone down for correct, up for skip
 * __Shake the phone back-and-forth to exit the game or pre-game countdown at any time__
+
+## Community Decks
+
+Be sure to share any decks you've made in the comments below!
 
 [1]: https://www.warnerbros.com/videogame/heads
 [2]: https://developers.google.com/sheets/api/guides/authorizing#APIKey
