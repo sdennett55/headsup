@@ -15,7 +15,7 @@ I find this game to be really fun to play in group settings. There's just a coup
 ## Solutions
 
 * No more repeats per playing session
-* It's free -- Use the existing decks or make your own
+* It's free -- Use the [existing decks][3] or make your own
 * Building your own deck is as simple as adding words to a google sheet
 
 ## Setup
@@ -36,3 +36,4 @@ Almost exactly like the original:
 
 [1]: https://www.warnerbros.com/videogame/heads
 [2]: https://developers.google.com/sheets/api/guides/authorizing#APIKey
+[3]: https://docs.google.com/spreadsheets/d/1XcUoOxrsdH0SbB_8VKe_pJtjq3MnJHCyqcexV3j2W28
