@@ -36,7 +36,7 @@ Almost exactly like the original:
 
 ## Community Decks
 
-Be sure to share any decks you've made in the comments below!
+Be sure to submit any decks you've made and I'll add the links below.
 
 [1]: https://www.warnerbros.com/videogame/heads
 [2]: https://developers.google.com/sheets/api/guides/authorizing#APIKey
