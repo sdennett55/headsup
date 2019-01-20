@@ -15,6 +15,7 @@ I find this game to be really fun to play in group settings. There's just a coup
 3. Building your own deck is as simple as adding words to a google (excel) sheet
 
 ## Setup
+![Screenshot of game](game_screenshot.PNG) ![Sheet example](sheet_example.PNG)
 1. Create a public or unlisted (recommended) google sheet
 2. Each column is a deck, the name of the deck must be in the top row
 3. [Request an API key][1]
