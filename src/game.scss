@@ -1,0 +1,28 @@
+.Game {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  &-activeItem {
+    font-size: 5rem;
+  }
+  &--correct {
+    left: 0;
+  }
+  &--skip {
+    right: 0;
+  }
+}
+
+.Timer {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Inconsolata", Monaco, monospace;
+  font-weight: bold;
+
+  &.is-countdown {
+    color: #b11738;
+  }
+}
