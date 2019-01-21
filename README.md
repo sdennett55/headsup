@@ -48,3 +48,7 @@ Example deck: https://docs.google.com/spreadsheets/d/1zwtuoozCw-8iGHFhJiolPz0Loy
 [1]: https://www.warnerbros.com/videogame/heads
 [2]: https://developers.google.com/sheets/api/guides/authorizing#APIKey
 [3]: https://docs.google.com/spreadsheets/d/1zwtuoozCw-8iGHFhJiolPz0Loy4sk17mHffVorw2z1s
+
+### To Do
+
+* Add sound bites for countdown and for correct/skip actions.
