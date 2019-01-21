@@ -33,9 +33,9 @@ class App extends React.Component {
   };
 
   async componentDidMount() {
-    const API_KEY = 'AIzaSyAZ1DwWLQtUG4THryaQOohA1GatPSW4bKQ';
-    const API =
-      `https://sheets.googleapis.com/v4/spreadsheets/1XcUoOxrsdH0SbB_8VKe_pJtjq3MnJHCyqcexV3j2W28/values:batchGet?ranges=categories&majorDimension=COLUMNS&key=${API_KEY}`;
+    const API_KEY = "AIzaSyAZ1DwWLQtUG4THryaQOohA1GatPSW4bKQ";
+    const SHEET_ID = "1zwtuoozCw-8iGHFhJiolPz0Loy4sk17mHffVorw2z1s";
+    const API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values:batchGet?ranges=categories&majorDimension=COLUMNS&key=${API_KEY}`;
     const response = await fetch(API);
     const data = await response.json();
     this.onLoad(data);
