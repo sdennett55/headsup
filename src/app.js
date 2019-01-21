@@ -132,7 +132,7 @@ class App extends React.Component {
     for (let i = 0; i < batchRowValues.length; i++) {
       for (let j = 1, arr = []; j < batchRowValues[i].length; j++) {
         arr.push(batchRowValues[i][j]);
-        rows[batchRowValues[i][0]] = new Set(arr);
+        rows[batchRowValues[i][0].trim().toLowerCase()] = new Set(arr);
       }
     }
 
