@@ -15,10 +15,10 @@ I find the mobile game _"Heads Up!"_ to be really fun to play in group settings.
 #### Solutions:
 
 * No more repeats per playing session
-* It's free -- Use/fork the [example deck][3] or make your own
+* 100% free
 * Building your own deck is as simple as adding words to a google sheet
 
-## Setup Your Own Game
+## Set up Your Own Game
 
 Fork https://codesandbox.io/s/m30pr0jwwp. Open the link to the project (in the psuedo-browser's address bar) and add to home screen! Then:
 
