@@ -8,7 +8,7 @@ This React mobile web app is inspired by the native iOS and Android game,[_"Head
 
 ## Introduction
 
-I find the mobile game _"Heads Up"_ to be really fun to play in group settings. There's just a couple of things about the original that I don't care for:
+I find the mobile game _"Heads Up!"_ to be really fun to play in group settings. There's just a couple of things about the original that I don't care for:
 
 * Ability to get repeat cards from a deck per playing session
 * $1.00 for paid decks
