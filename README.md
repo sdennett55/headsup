@@ -41,7 +41,7 @@ Almost exactly like the original:
 
 ## Community Decks
 
-Be sure to submit any decks you've made and I'll add the decks to the example deck below.
+Be sure to submit any decks you've made and I'll add them to the example deck below.
 
 Example deck: https://docs.google.com/spreadsheets/d/1zwtuoozCw-8iGHFhJiolPz0Loy4sk17mHffVorw2z1s
 
