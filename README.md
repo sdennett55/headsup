@@ -1,6 +1,6 @@
 # Heads Up v2.0
 
-Check it out on mobile and add to homescreen: https://codesandbox.io/s/py2r9j2q
+Check it out on mobile and add to homescreen: https://qvo44xr4p9.codesandbox.io/
 
 This React mobile web app is inspired by the native iOS and Android game,[_"Heads Up!"_][1]
 
@@ -20,7 +20,7 @@ I find the mobile game _"Heads Up!"_ to be really fun to play in group settings.
 
 ## Set up Your Own Game
 
-Fork https://codesandbox.io/s/py2r9j2q. Open the link to the project (in the psuedo-browser's address bar) and add to home screen! Then:
+Fork https://codesandbox.io/s/qvo44xr4p9. Open the link to the project (in the psuedo-browser's address bar) and add to home screen! Then:
 
 1. Create a google sheet
 2. Each column is a deck, add the name of the deck to the top row
