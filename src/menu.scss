@@ -1,9 +1,16 @@
 .Menu {
-  display: flex;
-  flex-wrap: wrap;
-  perspective: 1000px;
-  margin: 8px;
-
+  &-title {
+    font-size: 3em;
+    margin: 16px 0 0;
+    transform: skew(-8deg);
+    letter-spacing: -0.05px;
+  }
+  &-board {
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    margin: 8px;
+  }
   &-card {
     margin: 1vw 1vw;
     height: 40vh;
@@ -79,6 +86,7 @@
           width: 100%;
           height: 100%;
           opacity: 0.4;
+          background-size: cover;
           background-image: url("https://uploads.codesandbox.io/uploads/user/b8f1fe91-9c56-4aa6-8e4b-be201500d8d0/skRG-stars.svg.svg");
         }
       }

@@ -7,8 +7,10 @@
   "dependencies": {
     "classnames": "2.2.6",
     "react": "16.5.2",
+    "react-device-detect": "1.6.2",
     "react-dom": "16.5.2",
-    "react-scripts": "2.0.3"
+    "react-scripts": "2.0.3",
+    "react-sound": "1.2.0"
   },
   "devDependencies": {},
   "scripts": {

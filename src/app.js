@@ -29,7 +29,8 @@ class App extends React.Component {
     inGameTimer: GAME_TIMER,
     activeItem: "",
     orientation: "positive",
-    blockRotation: false
+    blockRotation: false,
+    isAnimating: ""
   };
 
   async componentDidMount() {
@@ -221,7 +222,12 @@ class App extends React.Component {
         ]
       }));
       if (decision === "correct") {
-        this.setState(prevState => ({ score: prevState.score + 1 }));
+        this.setState(prevState => ({
+          score: prevState.score + 1,
+          isAnimating: "correct"
+        }));
+      } else {
+        this.setState({ isAnimating: "skip" });
       }
     }
   };
@@ -303,6 +309,10 @@ class App extends React.Component {
     );
   };
 
+  removeAnimationClasses = () => {
+    this.setState({ isAnimating: "" });
+  };
+
   render() {
     return (
       <div className="App">
@@ -318,6 +328,8 @@ class App extends React.Component {
               <Game
                 inGameTimer={this.state.inGameTimer}
                 activeItem={this.state.activeItem}
+                isAnimating={this.state.isAnimating}
+                removeAnimationClasses={this.removeAnimationClasses}
               />
             )}
             {this.state.isResults && (
