@@ -25,7 +25,7 @@ Fork https://codesandbox.io/s/qvo44xr4p9. Open the link to the project (in the p
 1. Create a google sheet
 2. Each column is a deck, add the name of the deck to the top row
 3. [Request an API key][2]
-4. Replace your new API key with `API_KEY` and the sheet ID with `SHEET_ID` in `componentDidMount` of `app.js` in your codesandbox.
+4. Replace your new API key with `API_KEY` and the sheet ID with `SHEET_ID` in `componentDidMount` of `index.js` in your codesandbox.
 
 ## How to Play
 
