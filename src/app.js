@@ -29,13 +29,14 @@ class App extends React.Component {
     inGameTimer: GAME_TIMER,
     activeItem: "",
     orientation: "positive",
-    blockRotation: false
+    blockRotation: false,
+    isAnimating: ""
   };
 
   async componentDidMount() {
-    const API_KEY = 'AIzaSyAZ1DwWLQtUG4THryaQOohA1GatPSW4bKQ';
-    const API =
-      `https://sheets.googleapis.com/v4/spreadsheets/1XcUoOxrsdH0SbB_8VKe_pJtjq3MnJHCyqcexV3j2W28/values:batchGet?ranges=categories&majorDimension=COLUMNS&key=${API_KEY}`;
+    const API_KEY = "AIzaSyAZ1DwWLQtUG4THryaQOohA1GatPSW4bKQ";
+    const SHEET_ID = "1zwtuoozCw-8iGHFhJiolPz0Loy4sk17mHffVorw2z1s";
+    const API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values:batchGet?ranges=categories&majorDimension=COLUMNS&key=${API_KEY}`;
     const response = await fetch(API);
     const data = await response.json();
     this.onLoad(data);
@@ -221,7 +222,12 @@ class App extends React.Component {
         ]
       }));
       if (decision === "correct") {
-        this.setState(prevState => ({ score: prevState.score + 1 }));
+        this.setState(prevState => ({
+          score: prevState.score + 1,
+          isAnimating: "correct"
+        }));
+      } else {
+        this.setState({ isAnimating: "skip" });
       }
     }
   };
@@ -303,6 +309,10 @@ class App extends React.Component {
     );
   };
 
+  removeAnimationClasses = () => {
+    this.setState({ isAnimating: "" });
+  };
+
   render() {
     return (
       <div className="App">
@@ -318,6 +328,8 @@ class App extends React.Component {
               <Game
                 inGameTimer={this.state.inGameTimer}
                 activeItem={this.state.activeItem}
+                isAnimating={this.state.isAnimating}
+                removeAnimationClasses={this.removeAnimationClasses}
               />
             )}
             {this.state.isResults && (
