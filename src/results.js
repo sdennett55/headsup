@@ -30,7 +30,7 @@ const Results = ({
           <button
             className="Results-btn Results-btn--go"
             onClick={() => {
-              getActiveCat(activeCategory);
+              getActiveCat({cat: activeCategory});
             }}
           >
             Play {activeCategory} again

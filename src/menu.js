@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ReactNoSleep from 'react-no-sleep';
 import cx from "classnames";
 import "./menu.scss";
 
@@ -51,15 +52,19 @@ class Menu extends Component {
                   <div className="Menu-side Menu-side--back">
                     <p>About {cat} 'n stuff</p>
                     <div className="Menu-side-btnWrap">
-                      <button
-                        className="Menu-side-btn Menu-side-btn--go"
-                        onClick={() => {
-                          getActiveCat(cat);
-                        }}
-                        disabled={categories[cat].size === 0}
-                      >
-                        {categories[cat].size === 0 ? "Empty" : "Start"}
-                      </button>
+                    <ReactNoSleep>
+                      {({enable}) => (
+                        <button
+                          className="Menu-side-btn Menu-side-btn--go"
+                          onClick={() => {
+                            getActiveCat({cat, enable});
+                          }}
+                          disabled={categories[cat].size === 0}
+                        >
+                          {categories[cat].size === 0 ? "Empty" : "Start"}
+                        </button>
+                      )}
+                    </ReactNoSleep>
                     </div>
                   </div>
                   <div

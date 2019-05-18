@@ -145,7 +145,11 @@ class App extends React.Component {
     });
   };
 
-  getActiveCat = cat => {
+  getActiveCat = ({cat, enable}) => {
+    if (!!enable) {
+      enable();
+    }
+    
     this.setState({
       activeCollection: new Set(this.state.categories[cat]),
       activeCategory: cat
