@@ -53,11 +53,11 @@ class Menu extends Component {
                     <p>About {cat} 'n stuff</p>
                     <div className="Menu-side-btnWrap">
                     <ReactNoSleep>
-                      {({enable}) => (
+                      {({enable, isOn}) => (
                         <button
                           className="Menu-side-btn Menu-side-btn--go"
                           onClick={() => {
-                            getActiveCat({cat, enable});
+                            getActiveCat({cat, enable, isOn});
                           }}
                           disabled={categories[cat].size === 0}
                         >

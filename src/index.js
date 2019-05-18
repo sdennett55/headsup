@@ -145,8 +145,8 @@ class App extends React.Component {
     });
   };
 
-  getActiveCat = ({cat, enable}) => {
-    if (!!enable) {
+  getActiveCat = ({cat, enable, isOn}) => {
+    if (!isOn) {
       enable();
     }
     
