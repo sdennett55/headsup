@@ -1,0 +1,8 @@
+{
+  "secretkey": {
+    "key": "sk_test_AWNsOR42cwpZ97NPskqj26TR003weMZi99"
+  },
+  "stripe": {
+    "token": "sk_test_AWNsOR42cwpZ97NPskqj26TR003weMZi99"
+  }
+}

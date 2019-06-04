@@ -6,7 +6,6 @@ const Results = ({
   score,
   activeCollection,
   getActiveCat,
-  activeCategory,
   backToMenu,
   finalAnswers
 }) => {
@@ -26,14 +25,14 @@ const Results = ({
         ))}
       </ul>
       <div className="Results-btnWrap">
-        {activeCollection.size > 0 && (
+        {activeCollection.list.size > 0 && (
           <button
             className="Results-btn Results-btn--go"
             onClick={() => {
-              getActiveCat({cat: activeCategory});
+              getActiveCat({cat: activeCollection});
             }}
           >
-            Play {activeCategory} again
+            Play {activeCollection.name} again
           </button>
         )}
         <button

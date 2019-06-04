@@ -4,9 +4,12 @@ import Results from "./results";
 import Menu from "./menu";
 import Game from "./game";
 import LoadingIcon from "./loading_icon";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Login from './auth/login';
 import "./app.scss";
+import fire from "./config/fire";
 
-const GAME_TIMER = 60;
+const GAME_TIMER = 3;
 const START_TIMER = 3;
 
 let GAME_COUNTDOWN_INTERVAL;
@@ -23,17 +26,19 @@ class App extends React.Component {
     score: 0,
     finalAnswers: [],
     categories: {},
-    activeCollection: new Set(),
-    activeCategory: "",
+    activeCollection: {},
     startGameTimer: START_TIMER + 1,
     inGameTimer: GAME_TIMER,
     activeItem: "",
     orientation: "positive",
     blockRotation: false,
-    isAnimating: ""
+    isAnimating: "",
+    user: {}
   };
 
   async componentDidMount() {
+    this.authListener();
+    
     const API_KEY = "AIzaSyAZ1DwWLQtUG4THryaQOohA1GatPSW4bKQ";
     const SHEET_ID = "1zwtuoozCw-8iGHFhJiolPz0Loy4sk17mHffVorw2z1s";
     const API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values:batchGet?ranges=categories&majorDimension=COLUMNS&key=${API_KEY}`;
@@ -73,6 +78,16 @@ class App extends React.Component {
     );
     window.removeEventListener("devicemotion", event => {
       this.onDeviceMotion(event);
+    });
+  }
+
+  authListener = () => {
+    fire.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({user});
+      } else {
+        this.setState({user: null});
+      }
     });
   }
 
@@ -129,30 +144,33 @@ class App extends React.Component {
   onLoad = data => {
     let batchRowValues = data.valueRanges[0].values;
     let rows = {};
+    let finalArray = [];
+    let rest;
 
     for (let i = 0; i < batchRowValues.length; i++) {
-      for (let j = 1, arr = []; j < batchRowValues[i].length; j++) {
-        arr.push(batchRowValues[i][j]);
-        rows[batchRowValues[i][0].trim().toLowerCase()] = new Set(arr);
-      }
+      let finalObj = {};
+      finalObj.name = batchRowValues[i][0];
+      finalObj.isLocked = batchRowValues[i][1];
+      finalObj.description = batchRowValues[i][2];
+      finalObj.list = new Set([...batchRowValues[i].splice(3)]);
+      finalArray.push(finalObj);
     }
 
-    const firstCategory = Object.keys(rows)[0];
-
     this.setState({
-      categories: rows,
-      activeCollection: new Set(rows[firstCategory])
+      categories: finalArray,
+      activeCollection: finalArray[0]
     });
   };
 
-  getActiveCat = ({cat, enable, isOn}) => {
-    if (!isOn) {
+  getActiveCat = ({isOn, cat, enable}) => {
+    if (!isOn && enable) {
       enable();
     }
+
+    const newActiveCollection = {...cat, list: new Set(cat.list)};
     
     this.setState({
-      activeCollection: new Set(this.state.categories[cat]),
-      activeCategory: cat
+      activeCollection: newActiveCollection
     });
 
     this.goToStaging();
@@ -186,12 +204,12 @@ class App extends React.Component {
     }
 
     // Delete the active item, as we already saw it
-    let oldSet = new Set(this.state.activeCollection);
+    let oldSet = new Set(this.state.activeCollection.list);
     oldSet.delete(this.state.activeItem);
 
     // Reset all game state
-    this.setState(() => ({
-      activeCollection: oldSet,
+    this.setState((prevState) => ({
+      activeCollection: {...prevState.activeCollection, list: oldSet},
       isCountdownInProgress: false,
       inGameTimer: GAME_TIMER,
       startGameTimer: START_TIMER + 1,
@@ -239,28 +257,29 @@ class App extends React.Component {
   getRandomItem = () => {
     // Get random item
     const randomNum = Math.floor(
-      Math.random() * this.state.activeCollection.size
+      Math.random() * this.state.activeCollection.list.size
     );
-    const randomItem = [...this.state.activeCollection][randomNum];
+    const randomItem = [...this.state.activeCollection.list][randomNum];
 
     // Remove random item from activeCollection and the Categories object
-    const updatedCollection = new Set(this.state.activeCollection);
+    const updatedCollection = new Set(this.state.activeCollection.list);
     updatedCollection.delete(randomItem);
-    const newCategories = { ...this.state.categories };
-    newCategories[this.state.activeCategory] = updatedCollection;
 
-    this.setState({
+    const dupCategories = [...this.state.categories];
+    dupCategories.splice(dupCategories.findIndex(x => x.name === this.state.activeCollection.name), 1, {...this.state.activeCollection, list: updatedCollection});
+
+    this.setState(prevState => ({
       activeItem: randomItem,
-      activeCollection: updatedCollection,
-      categories: newCategories
-    });
+      activeCollection: {...prevState.activeCollection, updatedCollection},
+      categories: dupCategories
+    }));
   };
 
   getNextItem = decision => {
     // Don't get a next item if there isn't one
     if (
       this.state.activeItem === undefined &&
-      this.state.activeCollection.size === 0
+      this.state.activeCollection.list.size === 0
     ) {
       this.setState({ isGameOver: true });
       return;
@@ -319,51 +338,54 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        {Object.keys(this.state.categories).length ? (
-          <>
-            {this.state.isMenu && (
-              <Menu
-                getActiveCat={this.getActiveCat}
-                categories={this.state.categories}
-              />
-            )}
-            {this.state.isGameInProgress && (
-              <Game
-                inGameTimer={this.state.inGameTimer}
-                activeItem={this.state.activeItem}
-                isAnimating={this.state.isAnimating}
-                removeAnimationClasses={this.removeAnimationClasses}
-              />
-            )}
-            {this.state.isResults && (
-              <Results
-                score={this.state.score}
-                activeCollection={this.state.activeCollection}
-                getActiveCat={this.getActiveCat}
-                activeCategory={this.state.activeCategory}
-                backToMenu={this.backToMenu}
-                finalAnswers={this.state.finalAnswers}
-              />
-            )}
-            {this.state.isStaging && (
-              <div className="Staging">
-                {this.state.isCountdownInProgress ? (
-                  <span className="Staging-timerText">
-                    {this.state.startGameTimer}
-                  </span>
-                ) : (
-                  <span className="Staging-text">Place on forehead</span>
-                )}
-              </div>
-            )}
-          </>
-        ) : (
-          <>
-            <LoadingIcon />
-          </>
-        )}
-      </div>
+      <Router>
+        <div className="App">
+          {Object.keys(this.state.categories).length ? (
+            <>
+              {this.state.isMenu && (
+                <Menu
+                  getActiveCat={this.getActiveCat}
+                  categories={this.state.categories}
+                  user={this.state.user}
+                />
+              )}
+              {this.state.isGameInProgress && (
+                <Game
+                  inGameTimer={this.state.inGameTimer}
+                  activeItem={this.state.activeItem}
+                  isAnimating={this.state.isAnimating}
+                  removeAnimationClasses={this.removeAnimationClasses}
+                />
+              )}
+              {this.state.isResults && (
+                <Results
+                  score={this.state.score}
+                  activeCollection={this.state.activeCollection}
+                  getActiveCat={this.getActiveCat}
+                  backToMenu={this.backToMenu}
+                  finalAnswers={this.state.finalAnswers}
+                />
+              )}
+              {this.state.isStaging && (
+                <div className="Staging">
+                  {this.state.isCountdownInProgress ? (
+                    <span className="Staging-timerText">
+                      {this.state.startGameTimer}
+                    </span>
+                  ) : (
+                    <span className="Staging-text">Place on forehead</span>
+                  )}
+                </div>
+              )}
+            </>
+          ) : (
+            <>
+              <LoadingIcon />
+            </>
+          )}
+        </div>
+        <Route path="/login" component={Login} />
+      </Router>
     );
   }
 }

@@ -6,13 +6,21 @@
   "main": "src/index.js",
   "dependencies": {
     "classnames": "^2.2.6",
+    "dotenv": "^8.0.0",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "firebase": "^6.1.0",
     "node-sass": "^4.12.0",
     "react": "^16.5.2",
     "react-device-detect": "^1.6.2",
     "react-dom": "^16.5.2",
     "react-no-sleep": "^1.0.2",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
     "react-scripts": "^2.1.8",
-    "react-sound": "^1.2.0"
+    "react-sound": "^1.2.0",
+    "react-stripe-elements": "^3.0.0",
+    "stripe": "^7.1.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -26,5 +34,6 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "proxy": "http://localhost:8080"
 }
