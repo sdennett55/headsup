@@ -33,7 +33,8 @@ class Form extends Component {
     });
   };
 
-  handleSubmit = async (e, history) => {
+  handleSubmit = async (e, history, location) => {
+    console.log('hey mannnn', location);
     e.preventDefault();
 
     this.login(e, history);
@@ -55,9 +56,9 @@ class Form extends Component {
 
   render() {
     return (
-      <Route render={({ history}) => (
+      <Route render={({ history, location }) => (
         <div className="Login-wrap">
-          <form className="Login" onSubmit={e => this.handleSubmit(e, history)}>
+          <form className="Login" onSubmit={e => this.handleSubmit(e, history, location)}>
             <h2 className="Login-title">Sign up to purchase decks!</h2>
             <input type="email" name="email" placeholder="Email" className="Login-input" onChange={e => this.handleChange(e)} />
             <input type="password" name="password" placeholder="Password" className="Login-input" onChange={e => this.handleChange(e)} />

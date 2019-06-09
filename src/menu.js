@@ -47,6 +47,8 @@ class Menu extends Component {
     }
   }
 
+  getCategoryURL = name => name.toLowerCase().trim().replace(/\s/g, '-');
+
   render() {
     const { getActiveCat, categories, user } = this.props;
 
@@ -73,7 +75,7 @@ class Menu extends Component {
                   {cat.isLocked === 'TRUE' ? (
                     <Link
                       className="Menu-side-btn Menu-side-btn--go"
-                      to="/login"
+                      to={`/login/${this.getCategoryURL(cat.name)}`}
                     >
                       {this.getBackBtnText(cat)}
                     </Link>

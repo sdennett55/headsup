@@ -22,10 +22,13 @@
     "react-stripe-elements": "^3.0.0",
     "stripe": "^7.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "dev": "concurrently --kill-others \"npm run build\" && firebase serve",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
