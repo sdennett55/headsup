@@ -108,7 +108,7 @@ class Menu extends Component {
                   )}
                   <p className="Menu-info">{`${
                     cat.list.size
-                  } items left`}</p>
+                  } cards left`}</p>
                 </div>
               </div>
             ))}
