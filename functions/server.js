@@ -5,7 +5,6 @@ var apiRouter = require('./routes');
 const app = express();
 
 let p = path.join(__dirname, '../public');
-console.log(p);
 
 app.use(express.static(p));
 app.use(express.json());

@@ -6,8 +6,6 @@ const router = express.Router();
 
 const stripe = new stripeLoader(functions.config().stripe.token);
 
-console.log('what is uppppppp');
-
 const charge = (token, amount=99) => {
   return stripe.charges.create({
     amount: amount,
@@ -20,10 +18,8 @@ const charge = (token, amount=99) => {
 router.post('/api/donate', async (req, res, next) => {
   try {
     let data = await charge(req.body.token.id, req.body.amount);
-    console.log('ayyyyyyyyy', data);
     res.send("Charged!");
   } catch(e) {
-    console.log(e);
     res.status(500);
   }
 });

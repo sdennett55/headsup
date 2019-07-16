@@ -34,7 +34,6 @@ class Form extends Component {
   };
 
   handleSubmit = async (e, history, location) => {
-    console.log('hey mannnn', location);
     e.preventDefault();
 
     this.login(e, history);

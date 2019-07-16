@@ -10,9 +10,10 @@
     flex-wrap: wrap;
     perspective: 1000px;
     margin: 8px;
+    justify-content: center;
   }
   &-card {
-    margin: 1vw 1vw;
+    margin: 1vw;
     height: 40vh;
     width: calc(50% - 2vw);
     position: relative;
@@ -25,6 +26,15 @@
     &.is-flipped {
       -webtki-transform: rotateY(180deg) translate3d(0, 0, 0);
       transform: rotateY(180deg) translate3d(0, 0, 0);
+    }
+    @media (min-width: 768px) {
+      width: calc(33.33% - 2vw);
+    }
+    @media (min-width: 1024px) {
+      width: calc(25% - 2vw);
+    }
+    @media (min-width: 1280px) {
+      max-width: 350px;
     }
   }
   &-side {

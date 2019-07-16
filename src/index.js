@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from './auth/login';
 import "./app.scss";
 import fire from "./config/fire";
+import * as serviceWorker from './serviceWorker';
 
 const GAME_TIMER = 3;
 const START_TIMER = 3;
@@ -37,14 +38,21 @@ class App extends React.Component {
   };
 
   async componentDidMount() {
-    this.authListener();
+    // this.authListener();
     
-    const API_KEY = "AIzaSyAZ1DwWLQtUG4THryaQOohA1GatPSW4bKQ";
-    const SHEET_ID = "1zwtuoozCw-8iGHFhJiolPz0Loy4sk17mHffVorw2z1s";
-    const API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values:batchGet?ranges=categories&majorDimension=COLUMNS&key=${API_KEY}`;
-    const response = await fetch(API);
-    const data = await response.json();
-    this.onLoad(data);
+    // @TODO: remove the false for offline capabilities
+    if (localStorage.getItem('categories') && false) {
+      const data = JSON.parse(localStorage.getItem('categories'));
+      this.onLoad(data);
+    } else {
+      const API_KEY = "AIzaSyAZ1DwWLQtUG4THryaQOohA1GatPSW4bKQ";
+      const SHEET_ID = "1zwtuoozCw-8iGHFhJiolPz0Loy4sk17mHffVorw2z1s";
+      const API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values:batchGet?ranges=categories&majorDimension=COLUMNS&key=${API_KEY}`;
+      const response = await fetch(API);
+      const data = await response.json();
+      localStorage.setItem('categories', JSON.stringify(data));
+      this.onLoad(data);
+    }
 
     window.addEventListener("orientationchange", this.onOrientationChange);
 
@@ -80,6 +88,25 @@ class App extends React.Component {
       this.onDeviceMotion(event);
     });
   }
+
+  onLoad = data => {
+    let batchRowValues = data.valueRanges[0].values;
+    let finalArray = [];
+
+    for (let i = 0; i < batchRowValues.length; i++) {
+      let finalObj = {};
+      finalObj.name = batchRowValues[i][0];
+      finalObj.isLocked = batchRowValues[i][1];
+      finalObj.description = batchRowValues[i][2];
+      finalObj.list = new Set([...batchRowValues[i].splice(3)]);
+      finalArray.push(finalObj);
+    }
+
+    this.setState({
+      categories: finalArray,
+      activeCollection: finalArray[0]
+    });
+  };
 
   authListener = () => {
     fire.auth().onAuthStateChanged((user) => {
@@ -139,27 +166,6 @@ class App extends React.Component {
         this.startGame();
       }
     }
-  };
-
-  onLoad = data => {
-    let batchRowValues = data.valueRanges[0].values;
-    let rows = {};
-    let finalArray = [];
-    let rest;
-
-    for (let i = 0; i < batchRowValues.length; i++) {
-      let finalObj = {};
-      finalObj.name = batchRowValues[i][0];
-      finalObj.isLocked = batchRowValues[i][1];
-      finalObj.description = batchRowValues[i][2];
-      finalObj.list = new Set([...batchRowValues[i].splice(3)]);
-      finalArray.push(finalObj);
-    }
-
-    this.setState({
-      categories: finalArray,
-      activeCollection: finalArray[0]
-    });
   };
 
   getActiveCat = ({isOn, cat, enable}) => {
@@ -392,3 +398,8 @@ class App extends React.Component {
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.register();

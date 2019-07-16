@@ -10,8 +10,6 @@ var apiRouter = require('./routes');
 // });
 
 const app = express();
-console.log('asdfasdfasdf', functions.config().stripe.token, 'fart');
-console.log(functions.auth);
 app.use(apiRouter);
 // app.get('/timestamp', (request, response) => {
 //   response.send(`${Date.now()}`);

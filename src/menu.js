@@ -13,7 +13,6 @@ class Menu extends Component {
 
   componentDidMount() {
     // Dynamically create state for each category
-    console.log('wtfwtfwtfwtfwtf', this.props.categories);
     const buttons = this.props.categories.map(cat => {
       return { name: cat.name, isActive: false, isLocked: cat.isLocked };
     });
