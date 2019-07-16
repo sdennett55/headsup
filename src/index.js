@@ -41,8 +41,8 @@ class App extends React.Component {
     // this.authListener();
     
     // @TODO: remove the false for offline capabilities
-    if (localStorage.getItem('categories') && false) {
-      const data = JSON.parse(localStorage.getItem('categories'));
+    if (localStorage.getItem('waitup-categories')) {
+      const data = JSON.parse(localStorage.getItem('waitup-categories'));
       this.onLoad(data);
     } else {
       const API_KEY = "AIzaSyAZ1DwWLQtUG4THryaQOohA1GatPSW4bKQ";
@@ -50,7 +50,7 @@ class App extends React.Component {
       const API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values:batchGet?ranges=categories&majorDimension=COLUMNS&key=${API_KEY}`;
       const response = await fetch(API);
       const data = await response.json();
-      localStorage.setItem('categories', JSON.stringify(data));
+      localStorage.setItem('waitup-categories', JSON.stringify(data));
       this.onLoad(data);
     }
 
