@@ -41,7 +41,7 @@ class App extends React.Component {
     // this.authListener();
     
     // @TODO: remove the false for offline capabilities
-    if (localStorage.getItem('waitup-categories') && false) {
+    if (localStorage.getItem('waitup-categories')) {
       const data = JSON.parse(localStorage.getItem('waitup-categories'));
       this.onLoad(data);
     } else {
@@ -269,22 +269,16 @@ class App extends React.Component {
 
     // Remove random item from activeCollection and the Categories object
     const updatedCollection = new Set(this.state.activeCollection.list);
-    console.log('before delete', updatedCollection);
     updatedCollection.delete(randomItem);
-    console.log('after delete', updatedCollection);
 
     const dupCategories = [...this.state.categories];
     dupCategories.splice(dupCategories.findIndex(x => x.name === this.state.activeCollection.name), 1, {...this.state.activeCollection, list: updatedCollection});
-
-    console.log('delete idk', {...this.state.activeCollection, list: updatedCollection});
 
     this.setState(prevState => ({
       activeItem: randomItem,
       activeCollection: {...prevState.activeCollection, list: updatedCollection},
       categories: dupCategories
     }));
-
-    console.log('wtfwtfwtf', `random item: ${randomItem}`, `activeCollection: ${JSON.stringify(this.state.activeCollection.list)}`);
   };
 
   getNextItem = decision => {
