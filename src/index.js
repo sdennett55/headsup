@@ -10,7 +10,7 @@ import "./app.scss";
 import fire from "./config/fire";
 import * as serviceWorker from './serviceWorker';
 
-const GAME_TIMER = 3;
+const GAME_TIMER = 60;
 const START_TIMER = 3;
 
 let GAME_COUNTDOWN_INTERVAL;
@@ -41,7 +41,7 @@ class App extends React.Component {
     // this.authListener();
     
     // @TODO: remove the false for offline capabilities
-    if (localStorage.getItem('waitup-categories')) {
+    if (localStorage.getItem('waitup-categories') && false) {
       const data = JSON.parse(localStorage.getItem('waitup-categories'));
       this.onLoad(data);
     } else {
