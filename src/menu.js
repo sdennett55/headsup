@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactNoSleep from 'react-no-sleep';
 import { Link } from "react-router-dom";
+import Logo from "./logo";
 import cx from "classnames";
 import "./menu.scss";
 import fire from './config/fire';
@@ -53,7 +54,7 @@ class Menu extends Component {
 
     return (
       <div className="Menu">
-        <h1 className="Menu-title">Wait Up!</h1>
+        <Logo className="Logo" />
         {user && user.email && <div className="">Welcome, {user.email}! <button onClick={this.logout}>Sign Out</button></div>}
         <div className="Menu-board">
           {this.state.buttons.length &&
