@@ -41,7 +41,7 @@ class App extends React.Component {
     // this.authListener();
     
     // @TODO: remove the false for offline capabilities
-    if (localStorage.getItem('waitup-categories')) {
+    if (localStorage.getItem('waitup-categories') && !navigator.onLine) {
       const data = JSON.parse(localStorage.getItem('waitup-categories'));
       this.onLoad(data);
     } else {

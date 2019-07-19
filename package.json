@@ -23,14 +23,16 @@
     "stripe": "^7.1.0"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "concurrently": "^4.1.0",
+    "workbox-build": "^4.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && npm run build-sw",
     "dev": "concurrently --kill-others \"npm run build\" && firebase serve",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-sw": "node ./src/sw-build.js"
   },
   "browserslist": [
     ">0.2%",

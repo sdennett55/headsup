@@ -20,7 +20,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
@@ -40,7 +40,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
@@ -60,7 +60,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
@@ -80,7 +80,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
@@ -100,7 +100,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
@@ -120,7 +120,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
@@ -140,7 +140,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
@@ -160,7 +160,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
@@ -180,7 +180,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
@@ -200,7 +200,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
@@ -220,7 +220,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
@@ -240,7 +240,7 @@ const LoadingIcon = () => {
           ry="4.8"
           width="6"
           height="12"
-          fill="#13166f"
+          fill="#fff"
         >
           <animate
             attributeName="opacity"
