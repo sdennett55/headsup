@@ -2,6 +2,10 @@ import React from "react";
 import cx from "classnames";
 import "./results.scss";
 
+const removeUnderscores = str => str.replace(/_/g, ' ');
+
+const getName = ({name, activeCollection}) => activeCollection.name.toLowerCase().includes('kids') ? removeUnderscores(name) : name;
+
 const Results = ({
   score,
   activeCollection,
@@ -20,7 +24,7 @@ const Results = ({
               "Results--skip": status === "skip"
             })}
           >
-            {name}
+            {getName({name, activeCollection})}
           </li>
         ))}
       </ul>

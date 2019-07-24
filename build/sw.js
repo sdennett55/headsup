@@ -6,9 +6,9 @@ if ('function' === typeof importScripts) {
   if (workbox) {
     console.log('Workbox is loaded');
 
-    self.addEventListener('install', event => {
-      self.skipWaiting();
-    });
+    // self.addEventListener('install', event => {
+    //   self.skipWaiting();
+    // });
 
     /* injection point for manifest files.  */
     workbox.precaching.precacheAndRoute([
@@ -30,27 +30,27 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "index.html",
-    "revision": "55cc1c9c2b259d7f9ac3c14c23f51774"
+    "revision": "999ac06c5d2807644ae634a17f36b00a"
   },
   {
-    "url": "precache-manifest.c970ee3c9ae7383bf74f830a73347e3d.js",
-    "revision": "c970ee3c9ae7383bf74f830a73347e3d"
+    "url": "precache-manifest.0165ba4ed1c3956762f272bd6ede41a2.js",
+    "revision": "0165ba4ed1c3956762f272bd6ede41a2"
   },
   {
     "url": "service-worker.js",
-    "revision": "4a0ae20851bc28ab8c9d14bd8e0625b4"
+    "revision": "cc0b55d960f420916497ad0ce8531a5b"
   },
   {
-    "url": "static/css/main.f91424b5.chunk.css",
-    "revision": "f71e7a2f68acf4dc7e3d85f26e828528"
+    "url": "static/css/main.987551db.chunk.css",
+    "revision": "dd444c628bc0d5372ec8c3804a845447"
   },
   {
-    "url": "static/js/2.81eee17b.chunk.js",
-    "revision": "462fb3e65d0b7b04a782b7873ce13414"
+    "url": "static/js/2.7e5f80bf.chunk.js",
+    "revision": "e594ffda1ee5654105a68fbe247edc01"
   },
   {
-    "url": "static/js/main.68710a0f.chunk.js",
-    "revision": "6257fbde37896398231a22c738473742"
+    "url": "static/js/main.9704f414.chunk.js",
+    "revision": "1418beb26665c36c980899a47db780a6"
   },
   {
     "url": "static/js/runtime~main.a8a9905a.js",

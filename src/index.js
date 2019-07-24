@@ -376,6 +376,7 @@ class App extends React.Component {
               )}
               {this.state.isGameInProgress && (
                 <Game
+                  activeCollection={this.state.activeCollection}
                   inGameTimer={this.state.inGameTimer}
                   activeItem={this.state.activeItem}
                   isAnimating={this.state.isAnimating}

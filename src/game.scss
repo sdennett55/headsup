@@ -15,6 +15,10 @@
   &--skip {
     right: 0;
   }
+  &-image {
+    max-width: 100%;
+    max-height: calc(100vh - 114px);
+  }
 }
 
 .Timer {

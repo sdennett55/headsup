@@ -6,9 +6,9 @@ if ('function' === typeof importScripts) {
   if (workbox) {
     console.log('Workbox is loaded');
 
-    self.addEventListener('install', event => {
-      self.skipWaiting();
-    });
+    // self.addEventListener('install', event => {
+    //   self.skipWaiting();
+    // });
 
     /* injection point for manifest files.  */
     workbox.precaching.precacheAndRoute([]);
