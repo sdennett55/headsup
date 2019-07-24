@@ -32,7 +32,7 @@ const Results = ({
               getActiveCat({cat: activeCollection});
             }}
           >
-            Play {activeCollection.name} again
+            Play deck again
           </button>
         )}
         <button

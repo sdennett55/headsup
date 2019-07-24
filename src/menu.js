@@ -13,6 +13,16 @@ class Menu extends Component {
   };
 
   componentDidMount() {
+    this.createButtons();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.categories !== this.props.categories) {
+      this.createButtons();
+    }
+  }
+
+  createButtons = () => {
     // Dynamically create state for each category
     const buttons = this.props.categories.map(cat => {
       return { name: cat.name, isActive: false, isLocked: cat.isLocked };
@@ -57,7 +67,7 @@ class Menu extends Component {
         <Logo className="Logo" />
         {user && user.email && <div className="">Welcome, {user.email}! <button onClick={this.logout}>Sign Out</button></div>}
         <div className="Menu-board">
-          {this.state.buttons.length &&
+          {this.state.buttons.length && this.state.buttons.length === this.props.categories.length &&
             categories.map((cat, index) => (
               <div
                 key={cat.name}
@@ -72,28 +82,28 @@ class Menu extends Component {
                 <div className="Menu-side Menu-side--back">
                   <p>{cat.description}</p>
                   <div className="Menu-side-btnWrap">
-                  {cat.isLocked === 'TRUE' ? (
-                    <Link
-                      className="Menu-side-btn Menu-side-btn--go"
-                      to={`/login/${this.getCategoryURL(cat.name)}`}
-                    >
-                      {this.getBackBtnText(cat)}
-                    </Link>
-                  ) : (
-                    <ReactNoSleep>
-                      {({enable, isOn}) => (
-                        <button
-                          className="Menu-side-btn Menu-side-btn--go"
-                          onClick={() => {
-                            getActiveCat({cat, enable, isOn, isLocked: cat.isLocked});
-                          }}
-                          disabled={cat.size === 0}
-                        >
-                          {this.getBackBtnText(cat)}
-                        </button>
+                    {cat.isLocked === 'TRUE' ? (
+                      <Link
+                        className="Menu-side-btn Menu-side-btn--go"
+                        to={`/login/${this.getCategoryURL(cat.name)}`}
+                      >
+                        {this.getBackBtnText(cat)}
+                      </Link>
+                    ) : (
+                        <ReactNoSleep>
+                          {({ enable, isOn }) => (
+                            <button
+                              className="Menu-side-btn Menu-side-btn--go"
+                              onClick={() => {
+                                getActiveCat({ cat, enable, isOn, isLocked: cat.isLocked });
+                              }}
+                              disabled={cat.size === 0}
+                            >
+                              {this.getBackBtnText(cat)}
+                            </button>
+                          )}
+                        </ReactNoSleep>
                       )}
-                    </ReactNoSleep>
-                  )}
                   </div>
                 </div>
                 <div
@@ -109,7 +119,7 @@ class Menu extends Component {
                   )}
                   <p className="Menu-info">{`${
                     cat.list.size
-                  } cards left`}</p>
+                    } cards left`}</p>
                 </div>
               </div>
             ))}

@@ -6,6 +6,10 @@ if ('function' === typeof importScripts) {
   if (workbox) {
     console.log('Workbox is loaded');
 
+    self.addEventListener('install', event => {
+      self.skipWaiting();
+    });
+
     /* injection point for manifest files.  */
     workbox.precaching.precacheAndRoute([
   {
@@ -26,27 +30,27 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "index.html",
-    "revision": "34b1137913f6407d48258ff9c3f22b0d"
+    "revision": "55cc1c9c2b259d7f9ac3c14c23f51774"
   },
   {
-    "url": "precache-manifest.a7e31c4a01236b24a40955bddbcf76b4.js",
-    "revision": "a7e31c4a01236b24a40955bddbcf76b4"
+    "url": "precache-manifest.c970ee3c9ae7383bf74f830a73347e3d.js",
+    "revision": "c970ee3c9ae7383bf74f830a73347e3d"
   },
   {
     "url": "service-worker.js",
-    "revision": "cf8ed1e9d2692123c9928c15dfb4c58e"
+    "revision": "4a0ae20851bc28ab8c9d14bd8e0625b4"
   },
   {
-    "url": "static/css/main.c3ffff0c.chunk.css",
-    "revision": "c51df678814b924915352c6a369e2e73"
+    "url": "static/css/main.f91424b5.chunk.css",
+    "revision": "f71e7a2f68acf4dc7e3d85f26e828528"
   },
   {
-    "url": "static/js/2.92ae3777.chunk.js",
-    "revision": "b59d445f761b678d93e7d6504fee035e"
+    "url": "static/js/2.81eee17b.chunk.js",
+    "revision": "462fb3e65d0b7b04a782b7873ce13414"
   },
   {
-    "url": "static/js/main.32f5a366.chunk.js",
-    "revision": "6dda985a96991338940f80ed8eaa9f12"
+    "url": "static/js/main.68710a0f.chunk.js",
+    "revision": "6257fbde37896398231a22c738473742"
   },
   {
     "url": "static/js/runtime~main.a8a9905a.js",
@@ -56,7 +60,17 @@ if ('function' === typeof importScripts) {
 
     /* custom cache rules*/
     workbox.routing.registerRoute(
-      new RegExp('/.*/'),
+      new RegExp('/static/media.*/'),
+      new workbox.strategies.CacheFirst()
+    );
+
+    workbox.routing.registerRoute(
+      new RegExp('/static/css.*/'),
+      new workbox.strategies.NetworkFirst()
+    );
+
+    workbox.routing.registerRoute(
+      new RegExp('/static/js.*/'),
       new workbox.strategies.NetworkFirst()
     );
 

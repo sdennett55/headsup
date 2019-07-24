@@ -6,12 +6,26 @@ if ('function' === typeof importScripts) {
   if (workbox) {
     console.log('Workbox is loaded');
 
+    self.addEventListener('install', event => {
+      self.skipWaiting();
+    });
+
     /* injection point for manifest files.  */
     workbox.precaching.precacheAndRoute([]);
 
     /* custom cache rules*/
     workbox.routing.registerRoute(
-      new RegExp('/.*/'),
+      new RegExp('/static/media.*/'),
+      new workbox.strategies.CacheFirst()
+    );
+
+    workbox.routing.registerRoute(
+      new RegExp('/static/css.*/'),
+      new workbox.strategies.NetworkFirst()
+    );
+
+    workbox.routing.registerRoute(
+      new RegExp('/static/js.*/'),
       new workbox.strategies.NetworkFirst()
     );
 

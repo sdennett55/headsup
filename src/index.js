@@ -4,6 +4,7 @@ import Results from "./results";
 import Menu from "./menu";
 import Game from "./game";
 import LoadingIcon from "./loading_icon";
+import HelpModal from "./help_modal";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from './auth/login';
 import "./app.scss";
@@ -34,25 +35,14 @@ class App extends React.Component {
     orientation: "positive",
     blockRotation: false,
     isAnimating: "",
-    user: {}
+    user: {},
+    isModalOpen: false
   };
 
   async componentDidMount() {
     // this.authListener();
-    
-    // @TODO: remove the false for offline capabilities
-    if (localStorage.getItem('waitup-categories') && !navigator.onLine) {
-      const data = JSON.parse(localStorage.getItem('waitup-categories'));
-      this.onLoad(data);
-    } else {
-      const API_KEY = "AIzaSyAZ1DwWLQtUG4THryaQOohA1GatPSW4bKQ";
-      const SHEET_ID = "1zwtuoozCw-8iGHFhJiolPz0Loy4sk17mHffVorw2z1s";
-      const API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values:batchGet?ranges=categories&majorDimension=COLUMNS&key=${API_KEY}`;
-      const response = await fetch(API);
-      const data = await response.json();
-      localStorage.setItem('waitup-categories', JSON.stringify(data));
-      this.onLoad(data);
-    }
+
+    this.fetchData();
 
     window.addEventListener("orientationchange", this.onOrientationChange);
 
@@ -89,6 +79,21 @@ class App extends React.Component {
     });
   }
 
+  fetchData = async () => {
+    if (localStorage.getItem('waitup-categories') && !navigator.onLine) {
+      const data = JSON.parse(localStorage.getItem('waitup-categories'));
+      this.onLoad(data);
+    } else {
+      const API_KEY = "AIzaSyAZ1DwWLQtUG4THryaQOohA1GatPSW4bKQ";
+      const SHEET_ID = "1zwtuoozCw-8iGHFhJiolPz0Loy4sk17mHffVorw2z1s";
+      const API = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values:batchGet?ranges=categories&majorDimension=COLUMNS&key=${API_KEY}`;
+      const response = await fetch(API);
+      const data = await response.json();
+      localStorage.setItem('waitup-categories', JSON.stringify(data));
+      this.onLoad(data);
+    }
+  }
+
   onLoad = data => {
     let batchRowValues = data.valueRanges[0].values;
     let finalArray = [];
@@ -111,9 +116,9 @@ class App extends React.Component {
   authListener = () => {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
-        this.setState({user});
+        this.setState({ user });
       } else {
-        this.setState({user: null});
+        this.setState({ user: null });
       }
     });
   }
@@ -168,13 +173,13 @@ class App extends React.Component {
     }
   };
 
-  getActiveCat = ({isOn, cat, enable}) => {
+  getActiveCat = ({ isOn, cat, enable }) => {
     if (!isOn && enable) {
       enable();
     }
 
-    const newActiveCollection = {...cat, list: new Set(cat.list)};
-    
+    const newActiveCollection = { ...cat, list: new Set(cat.list) };
+
     this.setState({
       activeCollection: newActiveCollection
     });
@@ -215,7 +220,7 @@ class App extends React.Component {
 
     // Reset all game state
     this.setState((prevState) => ({
-      activeCollection: {...prevState.activeCollection, list: oldSet},
+      activeCollection: { ...prevState.activeCollection, list: oldSet },
       isCountdownInProgress: false,
       inGameTimer: GAME_TIMER,
       startGameTimer: START_TIMER + 1,
@@ -272,11 +277,11 @@ class App extends React.Component {
     updatedCollection.delete(randomItem);
 
     const dupCategories = [...this.state.categories];
-    dupCategories.splice(dupCategories.findIndex(x => x.name === this.state.activeCollection.name), 1, {...this.state.activeCollection, list: updatedCollection});
+    dupCategories.splice(dupCategories.findIndex(x => x.name === this.state.activeCollection.name), 1, { ...this.state.activeCollection, list: updatedCollection });
 
     this.setState(prevState => ({
       activeItem: randomItem,
-      activeCollection: {...prevState.activeCollection, list: updatedCollection},
+      activeCollection: { ...prevState.activeCollection, list: updatedCollection },
       categories: dupCategories
     }));
   };
@@ -342,6 +347,12 @@ class App extends React.Component {
     this.setState({ isAnimating: "" });
   };
 
+  handleHelpModal = () => {
+    this.setState(prevState => ({
+      isModalOpen: !prevState.isModalOpen
+    }));
+  }
+
   render() {
     return (
       <Router>
@@ -349,11 +360,19 @@ class App extends React.Component {
           {Object.keys(this.state.categories).length ? (
             <>
               {this.state.isMenu && (
-                <Menu
-                  getActiveCat={this.getActiveCat}
-                  categories={this.state.categories}
-                  user={this.state.user}
-                />
+                <>
+                  <button className="Menu-helpBtn" onClick={this.handleHelpModal}><i className="Menu-helpIcon">?</i></button>
+                  {this.state.isModalOpen && (
+                    <HelpModal handleHelpModal={this.handleHelpModal} isModalOpen={this.state.isModalOpen} />
+                  )}
+                  <Menu
+                    getActiveCat={this.getActiveCat}
+                    categories={this.state.categories}
+                    user={this.state.user}
+                  />
+                  <button className="Results-btn Results-btn--reshuffle" onClick={this.fetchData}>
+                    <svg className="Results-shuffleIcon" height="512px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M370.1,181.3H399v47.3l81-83.2L399,64v54h-28.9c-82.7,0-129.4,61.9-170.6,116.5c-37,49.1-69,95.4-120.6,95.4H32v63.3h46.9  c82.7,0,129.4-65.8,170.6-120.4C286.5,223.7,318.4,181.3,370.1,181.3z M153.2,217.5c3.5-4.6,7.1-9.3,10.7-14.1  c8.8-11.6,18-23.9,28-36.1c-29.6-27.9-65.3-48.5-113-48.5H32v63.3c0,0,13.3-0.6,46.9,0C111.4,182.8,131.8,196.2,153.2,217.5z   M399,330.4h-28.9c-31.5,0-55.7-15.8-78.2-39.3c-2.2,3-4.5,6-6.8,9c-9.9,13.1-20.5,27.2-32.2,41.1c30.4,29.9,67.2,52.5,117.2,52.5  H399V448l81-81.4l-81-83.2V330.4z" /></svg>Reshuffle Decks</button>
+                </>
               )}
               {this.state.isGameInProgress && (
                 <Game
@@ -379,16 +398,16 @@ class App extends React.Component {
                       {this.state.startGameTimer}
                     </span>
                   ) : (
-                    <span className="Staging-text">Place on forehead</span>
-                  )}
+                      <span className="Staging-text">Place on forehead</span>
+                    )}
                 </div>
               )}
             </>
           ) : (
-            <>
-              <LoadingIcon />
-            </>
-          )}
+              <>
+                <LoadingIcon />
+              </>
+            )}
         </div>
         <Route path="/login" component={Login} />
       </Router>

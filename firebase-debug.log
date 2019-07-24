@@ -1,0 +1,39 @@
+[debug] [2019-07-23T23:56:22.191Z] ----------------------------------------------------------------------
+[debug] [2019-07-23T23:56:22.214Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Steve\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-07-23T23:56:22.214Z] CLI Version:   6.10.0
+[debug] [2019-07-23T23:56:22.214Z] Platform:      win32
+[debug] [2019-07-23T23:56:22.214Z] Node Version:  v11.9.0
+[debug] [2019-07-23T23:56:22.282Z] Time:          Tue Jul 23 2019 19:56:22 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-07-23T23:56:22.282Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-23T23:56:22.399Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-23T23:56:22.400Z] > authorizing via signed-in user
+[debug] [2019-07-23T23:56:22.400Z] [iam] checking project wait-up-5ad7e for permissions ["firebase.projects.get"]
+[debug] [2019-07-23T23:56:22.402Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-23T23:56:22.402Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-23T23:56:22.826Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-23T23:56:22.839Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wait-up-5ad7e:testIamPermissions  
+
+[debug] [2019-07-23T23:56:23.129Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-23T23:56:23.130Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/wait-up-5ad7e  
+ 
+[debug] [2019-07-23T23:56:23.388Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Steve\Desktop\headsup'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "11"
+[debug] [2019-07-23T23:56:23.460Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/603672906124/clients/_:getWebAppConfig  
+ 
+[debug] [2019-07-23T23:56:23.461Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/603672906124:getServerAppConfig  
+ 
+[debug] [2019-07-23T23:56:23.772Z] <<< HTTP RESPONSE 200
+[info] +  functions: Emulator started at http://localhost:5001
+[debug] [2019-07-23T23:56:23.921Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "C:\Users\Steve\Desktop\headsup\functions" for Cloud Functions...
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-07-23T23:56:24.712Z] Functions runtime initialized.
+[debug] [2019-07-23T23:56:24.713Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[debug] [2019-07-23T23:56:28.428Z] firebase-admin has been stubbed.
+[info] i  functions: HTTP trigger initialized at http://localhost:5001/wait-up-5ad7e/us-central1/app

@@ -1,4 +1,29 @@
 .Menu {
+  &-helpBtn {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    background: #1789fc;
+    color: rgba(255,255,255,.85);
+    padding: 0;
+    border: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding: 8px 12px;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    font-family: 'Staatliches', Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 8px rgba(0,0,0,.1);
+  }
+  &-helpIcon {
+    background: #fff;
+    border-radius: 50%;
+    padding: 3px;
+    font-style: normal;
+    width: 20px;
+    height: 20px;
+    color: #296eb4;
+  }
   &-title {
     font-size: 3em;
     margin: 16px 0 0;
@@ -110,7 +135,7 @@
           height: 100%;
           opacity: 0.4;
           background-size: cover;
-          background-image: url("https://uploads.codesandbox.io/uploads/user/b8f1fe91-9c56-4aa6-8e4b-be201500d8d0/skRG-stars.svg.svg");
+          background-image: url("images/stars.svg");
         }
       }
       &:disabled {

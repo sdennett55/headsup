@@ -9,6 +9,14 @@
     display: flex;
     justify-content: center;
   }
+  &-shuffleIcon {
+    width: 25px;
+    height: 25px;
+    fill: #296eb4;
+    margin-right: .25em;
+    top: -1px;
+    position: relative;
+  }
   &-btn {
     font-family: inherit;
     border: 0;
@@ -17,7 +25,8 @@
     background-color: #fff;
     margin: 16px 6px 6px;
     font-size: 2rem;
-    color: #13166f;
+    color: #1789FC;
+    line-height: 1;
     &--go {
       position: relative;
       background-color: #dcb43e;
@@ -39,12 +48,29 @@
       position: relative;
       z-index: 1;
     }
+    &--reshuffle {
+      margin: 1em auto 0;
+      font-size: 1.5em;
+      border-radius: 5px 5px 0 0;
+      display: flex;
+      align-items: center;
+
+      &:hover,
+      &:focus {
+        background-color: #1789FC;
+        color: #fff;
+
+        .Results-shuffleIcon {
+          fill: #fff;
+        }
+      }
+    }
   }
   &-list {
     padding: 0;
     margin: 0;
     height: calc(100vh - 186px);
-    font-size: 1.2rem;
+    font-size: 1.75rem;
     flex: 1;
     display: flex;
     flex-direction: column;
