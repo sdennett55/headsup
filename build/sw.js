@@ -15,7 +15,7 @@ if ('function' === typeof importScripts) {
     workbox.precaching.precacheAndRoute([
   {
     "url": "asset-manifest.json",
-    "revision": "35193690667778b05db2a8a63c6eefee"
+    "revision": "4013689fc6c3dfaf666a8e3d3433ee33"
   },
   {
     "url": "favicon.png",
@@ -39,23 +39,27 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "images/icons-192.png",
-    "revision": "a7aa70fbdc6606b9dfe606137d16ea5b"
+    "revision": "0c7e1204fc81938780b87d85fe162cdb"
+  },
+  {
+    "url": "images/icons-512.png",
+    "revision": "d6c6fd0ccd4355301f4a0c4cbdbdaf16"
   },
   {
     "url": "index.html",
-    "revision": "b7fbdc1415d1b5f4955efaa635c988c5"
+    "revision": "6490dac74832eac1a0b6897c2f324b35"
   },
   {
     "url": "manifest.json",
-    "revision": "70beca9c79948bb013fb050c720c1a7e"
+    "revision": "4942aa4c9d8b5297ec5cc39baa980ddc"
   },
   {
-    "url": "precache-manifest.ce634df73e61664f51b7e801682bdf64.js",
-    "revision": "ce634df73e61664f51b7e801682bdf64"
+    "url": "precache-manifest.18f8078c1339cd5a46316d8cd00476fa.js",
+    "revision": "18f8078c1339cd5a46316d8cd00476fa"
   },
   {
     "url": "service-worker.js",
-    "revision": "dae09f45253020d943e34e2cb78b62fd"
+    "revision": "670efd898d99e863cb9d07cc98f8dd82"
   },
   {
     "url": "static/css/main.76d67907.chunk.css",
