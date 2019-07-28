@@ -4,14 +4,16 @@ import Results from "./results";
 import Menu from "./menu";
 import Game from "./game";
 import LoadingIcon from "./loading_icon";
-import HelpModal from "./help_modal";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import { ReactComponent as Gear } from './images/gear.svg';
+import HelpModal from './help_modal';
+import SettingsModal from './settings_modal';
 import Login from './auth/login';
 import "./app.scss";
 import fire from "./config/fire";
 import * as serviceWorker from './serviceWorker';
 
-const GAME_TIMER = 60;
+const DEFAULT_GAME_TIMER = 60;
 const START_TIMER = 3;
 
 let GAME_COUNTDOWN_INTERVAL;
@@ -30,13 +32,16 @@ class App extends React.Component {
     categories: {},
     activeCollection: {},
     startGameTimer: START_TIMER + 1,
-    inGameTimer: GAME_TIMER,
+    inGameTimer: DEFAULT_GAME_TIMER,
     activeItem: "",
     orientation: "positive",
     blockRotation: false,
     isAnimating: "",
     user: {},
-    isModalOpen: false
+    isHelpModalOpen: false,
+    isSettingsModalOpen: false,
+    enableSoundEffects: false,
+    gameClock: DEFAULT_GAME_TIMER
   };
 
   async componentDidMount() {
@@ -222,7 +227,7 @@ class App extends React.Component {
     this.setState((prevState) => ({
       activeCollection: { ...prevState.activeCollection, list: oldSet },
       isCountdownInProgress: false,
-      inGameTimer: GAME_TIMER,
+      inGameTimer: this.state.gameClock,
       startGameTimer: START_TIMER + 1,
       isGameInProgress: false,
       isStaging: false,
@@ -349,8 +354,24 @@ class App extends React.Component {
 
   handleHelpModal = () => {
     this.setState(prevState => ({
-      isModalOpen: !prevState.isModalOpen
+      isHelpModalOpen: !prevState.isHelpModalOpen
     }));
+  }
+
+  handleSettingsModal = () => {
+    this.setState(prevState => ({
+      isSettingsModalOpen: !prevState.isSettingsModalOpen
+    }));
+  }
+
+  handleSoundEffects = () => {
+    this.setState(prevState => ({
+      enableSoundEffects: !prevState.enableSoundEffects
+    }));
+  }
+
+  handleGameClock = num => {
+    this.setState({ gameClock: num, inGameTimer: num });
   }
 
   render() {
@@ -362,16 +383,30 @@ class App extends React.Component {
               {this.state.isMenu && (
                 <>
                   <button className="Menu-helpBtn" onClick={this.handleHelpModal}><i className="Menu-helpIcon">?</i></button>
-                  {this.state.isModalOpen && (
-                    <HelpModal handleHelpModal={this.handleHelpModal} isModalOpen={this.state.isModalOpen} />
+                  {this.state.isHelpModalOpen && (
+                    <HelpModal handleModalClose={this.handleHelpModal} />
                   )}
                   <Menu
                     getActiveCat={this.getActiveCat}
                     categories={this.state.categories}
                     user={this.state.user}
                   />
+                  <p className="App-followUs">Follow on instagram: <a href="https://instagram.com/waitupgame">@waitupgame</a></p>
                   <button className="Results-btn Results-btn--reshuffle" onClick={this.fetchData}>
-                    <svg className="Results-shuffleIcon" height="512px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M370.1,181.3H399v47.3l81-83.2L399,64v54h-28.9c-82.7,0-129.4,61.9-170.6,116.5c-37,49.1-69,95.4-120.6,95.4H32v63.3h46.9  c82.7,0,129.4-65.8,170.6-120.4C286.5,223.7,318.4,181.3,370.1,181.3z M153.2,217.5c3.5-4.6,7.1-9.3,10.7-14.1  c8.8-11.6,18-23.9,28-36.1c-29.6-27.9-65.3-48.5-113-48.5H32v63.3c0,0,13.3-0.6,46.9,0C111.4,182.8,131.8,196.2,153.2,217.5z   M399,330.4h-28.9c-31.5,0-55.7-15.8-78.2-39.3c-2.2,3-4.5,6-6.8,9c-9.9,13.1-20.5,27.2-32.2,41.1c30.4,29.9,67.2,52.5,117.2,52.5  H399V448l81-81.4l-81-83.2V330.4z" /></svg>Reshuffle Decks</button>
+                    <svg className="Results-shuffleIcon" height="512px" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M370.1,181.3H399v47.3l81-83.2L399,64v54h-28.9c-82.7,0-129.4,61.9-170.6,116.5c-37,49.1-69,95.4-120.6,95.4H32v63.3h46.9  c82.7,0,129.4-65.8,170.6-120.4C286.5,223.7,318.4,181.3,370.1,181.3z M153.2,217.5c3.5-4.6,7.1-9.3,10.7-14.1  c8.8-11.6,18-23.9,28-36.1c-29.6-27.9-65.3-48.5-113-48.5H32v63.3c0,0,13.3-0.6,46.9,0C111.4,182.8,131.8,196.2,153.2,217.5z   M399,330.4h-28.9c-31.5,0-55.7-15.8-78.2-39.3c-2.2,3-4.5,6-6.8,9c-9.9,13.1-20.5,27.2-32.2,41.1c30.4,29.9,67.2,52.5,117.2,52.5  H399V448l81-81.4l-81-83.2V330.4z" /></svg>
+                    Reshuffle Decks
+                  </button>
+                  <button className="Menu-settingsBtn" onClick={this.handleSettingsModal}><Gear className="hey" /></button>
+                  {this.state.isSettingsModalOpen && (
+                    <SettingsModal 
+                      handleModalClose={this.handleSettingsModal} 
+                      handleSoundEffects={this.handleSoundEffects} 
+                      enableSoundEffects={this.state.enableSoundEffects} 
+                      handleGameClock={this.handleGameClock}
+                      gameClock={this.state.gameClock}
+                      closeBtnRight 
+                    />
+                  )}
                 </>
               )}
               {this.state.isGameInProgress && (
@@ -381,6 +416,7 @@ class App extends React.Component {
                   activeItem={this.state.activeItem}
                   isAnimating={this.state.isAnimating}
                   removeAnimationClasses={this.removeAnimationClasses}
+                  enableSoundEffects={this.state.enableSoundEffects}
                 />
               )}
               {this.state.isResults && (

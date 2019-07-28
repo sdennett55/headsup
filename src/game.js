@@ -115,16 +115,18 @@ const hash = {
   woody
 };
 
+const toMMSS = s => (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s;
+
 const Game = ({
   activeCollection,
   inGameTimer,
   activeItem,
   isAnimating,
-  removeAnimationClasses
+  removeAnimationClasses,
+  enableSoundEffects
 }) => {
   const lessThanTen = inGameTimer < 10;
-  const timerPrefix = lessThanTen ? "0:0" : "0:";
-  const timer = timerPrefix + inGameTimer;
+  const timer = toMMSS(inGameTimer);
   const soundFile =
     isAnimating === "correct"
       ? "https://uploads.codesandbox.io/uploads/user/b8f1fe91-9c56-4aa6-8e4b-be201500d8d0/oyPj-sound_correct.mp3"
@@ -141,7 +143,7 @@ const Game = ({
         })}
         onTransitionEnd={removeAnimationClasses}
       >
-        {isAnimating && !isIOS && (
+        {isAnimating && !isIOS && enableSoundEffects && (
           <Sound url={soundFile} playStatus={Sound.status.PLAYING} />
         )}
         {activeItem !== undefined ? (
@@ -149,10 +151,10 @@ const Game = ({
             {isAnimating !== "" ? statusText : getActiveItem()}
           </div>
         ) : (
-          <p>
-            Category is empty :( <br /> Carefully shake device to return to menu.
+            <p>
+              Category is empty :( <br /> Carefully shake device to return to menu.
           </p>
-        )}
+          )}
         <div
           className={cx("Timer", {
             "is-countdown": lessThanTen

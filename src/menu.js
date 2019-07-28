@@ -117,6 +117,11 @@ class Menu extends Component {
                       $0.99!
                     </div>
                   )}
+                  {cat.name.toLowerCase().includes('kid') && (
+                    <div className="Menu-side-saleFlag">
+                      Kids!
+                    </div>
+                  )}
                   <p className="Menu-info">{`${
                     cat.list.size
                     } cards left`}</p>

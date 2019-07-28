@@ -32,6 +32,22 @@ body {
 .App {
   font-family: "Staatliches", sans-serif;
   text-align: center;
+
+  &-followUs {
+    color: #0d3157;
+    font-size: 1.5em;
+    margin: 1em 8px 0;
+    
+    > a {
+      color: #1789fc;
+      text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+
+      &:hover,
+      &:focus {
+        color: #1789fc;
+      }
+    }
+  }
 }
 
 .Staging {

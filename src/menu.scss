@@ -1,19 +1,25 @@
 .Menu {
-  &-helpBtn {
+  &-helpBtn,
+  &-settingsBtn {
     position: absolute;
     top: 12px;
-    left: 0;
     background: #1789fc;
     color: rgba(255,255,255,.85);
     padding: 0;
     border: 0;
-    padding-left: 10px;
-    padding-right: 10px;
     padding: 8px 12px;
-    border-radius: 0 5px 5px 0;
     display: flex;
     font-family: 'Staatliches', Arial, Helvetica, sans-serif;
     box-shadow: 0 0 8px rgba(0,0,0,.1);
+    margin: 0;
+  }
+  &-helpBtn {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+  }
+  &-settingsBtn {
+    right: 0;
+    border-radius: 5px 0 0 5px;
   }
   &-helpIcon {
     background: #fff;
@@ -88,7 +94,9 @@
       width: 150px;
       -webkit-transform: rotate(-45deg);
       transform: rotate(-45deg);
-      background: red;
+      background: #ea2c2c;
+      text-indent: -18px;
+      padding-top: 3px;
     }
     &--front {
       color: #fff;

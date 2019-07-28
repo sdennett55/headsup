@@ -2,6 +2,7 @@ if ('function' === typeof importScripts) {
   importScripts(
     'https://storage.googleapis.com/workbox-cdn/releases/3.5.0/workbox-sw.js'
   );
+
   /* global workbox */
   if (workbox) {
     console.log('Workbox is loaded');
@@ -14,11 +15,6 @@ if ('function' === typeof importScripts) {
     workbox.precaching.precacheAndRoute([]);
 
     /* custom cache rules*/
-    workbox.routing.registerRoute(
-      new RegExp('/static/media.*/'),
-      new workbox.strategies.CacheFirst()
-    );
-
     workbox.routing.registerRoute(
       new RegExp('/static/css.*/'),
       new workbox.strategies.NetworkFirst()
