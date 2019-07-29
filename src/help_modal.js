@@ -19,7 +19,7 @@ const HelpModal = ({ handleModalClose }) => {
         </>
       )}
       <h2 className="Modal-subtitle">Contact</h2>
-      <p className="Modal-copy">For issues, feedback, inquiries or anything at all feel free to reach out at: <span className="Modal-emphasis">w<span>ai</span>tupga<span>me@</span>g<span>m</span>ail.com</span>!</p>
+      <p className="Modal-copy">For issues, feedback, inquiries or anything at all feel free to reach out at <span className="Modal-emphasis">w<span>ai</span>tupga<span>me@</span>g<span>m</span>ail.com</span> or on instagram at @waitupgame.</p>
     </Modal>
   )
 }

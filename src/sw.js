@@ -5,11 +5,18 @@ if ('function' === typeof importScripts) {
 
   /* global workbox */
   if (workbox) {
-    console.log('Workbox is loaded');
 
-    // self.addEventListener('install', event => {
-    //   self.skipWaiting();
-    // });
+    self.addEventListener('message', (event) => {
+      if (event.data && event.data.type === 'SKIP_WAITING') {
+        console.log('poop from serviceworker');
+        self.skipWaiting();
+      }
+    });
+
+    self.addEventListener('activate', event => {
+      event.waitUntil(self.clients.claim());
+    });
+    
 
     /* injection point for manifest files.  */
     workbox.precaching.precacheAndRoute([]);

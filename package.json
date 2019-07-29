@@ -20,7 +20,8 @@
     "react-scripts": "^2.1.8",
     "react-sound": "^1.2.0",
     "react-stripe-elements": "^3.0.0",
-    "stripe": "^7.1.0"
+    "stripe": "^7.1.0",
+    "workbox-window": "^4.3.1"
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
