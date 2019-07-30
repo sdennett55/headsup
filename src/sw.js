@@ -6,11 +6,8 @@ if ('function' === typeof importScripts) {
   /* global workbox */
   if (workbox) {
 
-    self.addEventListener('message', (event) => {
-      if (event.data && event.data.type === 'SKIP_WAITING') {
-        console.log('poop from serviceworker');
-        self.skipWaiting();
-      }
+    self.addEventListener('install', event => {
+      self.skipWaiting();
     });
 
     self.addEventListener('activate', event => {

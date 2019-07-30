@@ -15,11 +15,11 @@ const HelpModal = ({ handleModalClose }) => {
       {isIOS && (
         <>
           <h2 className="Modal-subtitle">Get Updates on IOS</h2>
-          <p className="Modal-copy">In order to receieve any updates to the app itself, you'll need to remove the app from the home screen, then go to Settings &rarr; Safari &rarr; Advanced &rarr; Website data &rarr; Remove All Website Data. Then, reinstall to home screen from https://waitupgame.com</p>
+          <p className="Modal-copy">Hit the "Reshuffle Decks" button at the bottom of the decks to reshuffle the existing decks but to also to receive any updates to the app!</p>
         </>
       )}
       <h2 className="Modal-subtitle">Contact</h2>
-      <p className="Modal-copy">For issues, feedback, inquiries or anything at all feel free to reach out at <span className="Modal-emphasis">w<span>ai</span>tupga<span>me@</span>g<span>m</span>ail.com</span> or on instagram at @waitupgame.</p>
+      <p className="Modal-copy">For issues, feedback, inquiries or anything at all feel free to reach out at <span className="Modal-emphasis">w<span>ai</span>tupga<span>me@</span>g<span>m</span>ail.com</span>!</p>
     </Modal>
   )
 }
