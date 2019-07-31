@@ -1,0 +1,224 @@
+[debug] [2019-07-31T03:43:24.843Z] ----------------------------------------------------------------------
+[debug] [2019-07-31T03:43:24.845Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Steve\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-07-31T03:43:24.845Z] CLI Version:   6.10.0
+[debug] [2019-07-31T03:43:24.845Z] Platform:      win32
+[debug] [2019-07-31T03:43:24.845Z] Node Version:  v12.7.0
+[debug] [2019-07-31T03:43:24.846Z] Time:          Tue Jul 30 2019 23:43:24 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-07-31T03:43:24.846Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-31T03:43:24.873Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-31T03:43:24.873Z] > authorizing via signed-in user
+[debug] [2019-07-31T03:43:24.874Z] [iam] checking project wait-up-5ad7e for permissions ["firebase.projects.get"]
+[debug] [2019-07-31T03:43:24.875Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-07-31T03:43:24.875Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-07-31T03:43:25.063Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-31T03:43:25.093Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wait-up-5ad7e:testIamPermissions  
+
+[debug] [2019-07-31T03:43:25.423Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-31T03:43:25.427Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/wait-up-5ad7e  
+ 
+[debug] [2019-07-31T03:43:25.723Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Steve\Desktop\headsup'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[debug] [2019-07-31T03:43:25.758Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/603672906124/clients/_:getWebAppConfig  
+ 
+[debug] [2019-07-31T03:43:25.759Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/603672906124:getServerAppConfig  
+ 
+[debug] [2019-07-31T03:43:26.025Z] <<< HTTP RESPONSE 200
+[info] +  functions: Emulator started at http://localhost:5001
+[debug] [2019-07-31T03:43:26.094Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "C:\Users\Steve\Desktop\headsup\functions" for Cloud Functions...
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-07-31T03:43:26.487Z] Functions runtime initialized.
+[debug] [2019-07-31T03:43:26.487Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[warn] !  Error: Failed to load gRPC binary module because it was not installed for the current system
+Expected directory: node-v72-win32-x64-unknown
+Found: [node-v67-win32-ia32-unknown]
+This problem can often be fixed by running "npm rebuild" on the current system
+Original error: Cannot find module 'C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\node\extension_binary\node-v72-win32-x64-unknown\grpc_node.node'
+Require stack:
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\grpc_extension.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client_interceptors.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\index.js
+- C:\Users\Steve\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js
+    at Object.<anonymous> (C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\grpc_extension.js:53:17)
+    at Module._compile (internal/modules/cjs/loader.js:777:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
+    at Module.load (internal/modules/cjs/loader.js:643:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:683:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at Object.<anonymous> (C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client_interceptors.js:144:12)
+    at Module._compile (internal/modules/cjs/loader.js:777:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
+[warn] !  Your function was killed because it raised an unhandled error.
+[debug] [2019-07-31T03:44:55.152Z] ----------------------------------------------------------------------
+[debug] [2019-07-31T03:44:55.154Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Steve\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-07-31T03:44:55.154Z] CLI Version:   6.10.0
+[debug] [2019-07-31T03:44:55.154Z] Platform:      win32
+[debug] [2019-07-31T03:44:55.154Z] Node Version:  v12.7.0
+[debug] [2019-07-31T03:44:55.155Z] Time:          Tue Jul 30 2019 23:44:55 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-07-31T03:44:55.155Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-31T03:44:55.162Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-31T03:44:55.163Z] > authorizing via signed-in user
+[debug] [2019-07-31T03:44:55.163Z] [iam] checking project wait-up-5ad7e for permissions ["firebase.projects.get"]
+[debug] [2019-07-31T03:44:55.164Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wait-up-5ad7e:testIamPermissions  
+
+[debug] [2019-07-31T03:44:55.501Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-31T03:44:55.503Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/wait-up-5ad7e  
+ 
+[debug] [2019-07-31T03:44:55.812Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Steve\Desktop\headsup'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[debug] [2019-07-31T03:44:55.824Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/603672906124/clients/_:getWebAppConfig  
+ 
+[debug] [2019-07-31T03:44:55.825Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/603672906124:getServerAppConfig  
+ 
+[debug] [2019-07-31T03:44:56.078Z] <<< HTTP RESPONSE 200
+[info] +  functions: Emulator started at http://localhost:5001
+[debug] [2019-07-31T03:44:56.132Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "C:\Users\Steve\Desktop\headsup\functions" for Cloud Functions...
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-07-31T03:44:56.441Z] Functions runtime initialized.
+[debug] [2019-07-31T03:44:56.442Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[warn] !  Error: Failed to load gRPC binary module because it was not installed for the current system
+Expected directory: node-v72-win32-x64-unknown
+Found: [node-v67-win32-ia32-unknown]
+This problem can often be fixed by running "npm rebuild" on the current system
+Original error: Cannot find module 'C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\node\extension_binary\node-v72-win32-x64-unknown\grpc_node.node'
+Require stack:
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\grpc_extension.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client_interceptors.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\index.js
+- C:\Users\Steve\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js
+    at Object.<anonymous> (C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\grpc_extension.js:53:17)
+    at Module._compile (internal/modules/cjs/loader.js:777:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
+    at Module.load (internal/modules/cjs/loader.js:643:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:683:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at Object.<anonymous> (C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client_interceptors.js:144:12)
+    at Module._compile (internal/modules/cjs/loader.js:777:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
+[warn] !  Your function was killed because it raised an unhandled error.
+[debug] [2019-07-31T04:00:18.786Z] ----------------------------------------------------------------------
+[debug] [2019-07-31T04:00:18.788Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Steve\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-07-31T04:00:18.788Z] CLI Version:   6.10.0
+[debug] [2019-07-31T04:00:18.788Z] Platform:      win32
+[debug] [2019-07-31T04:00:18.788Z] Node Version:  v12.7.0
+[debug] [2019-07-31T04:00:18.789Z] Time:          Wed Jul 31 2019 00:00:18 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-07-31T04:00:18.789Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-31T04:00:18.796Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-31T04:00:18.797Z] > authorizing via signed-in user
+[debug] [2019-07-31T04:00:18.797Z] [iam] checking project wait-up-5ad7e for permissions ["firebase.projects.get"]
+[debug] [2019-07-31T04:00:18.799Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wait-up-5ad7e:testIamPermissions  
+
+[debug] [2019-07-31T04:00:19.139Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-31T04:00:19.140Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/wait-up-5ad7e  
+ 
+[debug] [2019-07-31T04:00:19.423Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Steve\Desktop\headsup'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[debug] [2019-07-31T04:00:19.433Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/603672906124/clients/_:getWebAppConfig  
+ 
+[debug] [2019-07-31T04:00:19.434Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/603672906124:getServerAppConfig  
+ 
+[debug] [2019-07-31T04:00:19.689Z] <<< HTTP RESPONSE 200
+[info] +  functions: Emulator started at http://localhost:5001
+[debug] [2019-07-31T04:00:19.762Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "C:\Users\Steve\Desktop\headsup\functions" for Cloud Functions...
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-07-31T04:00:20.092Z] Functions runtime initialized.
+[debug] [2019-07-31T04:00:20.092Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[warn] !  Error: Failed to load gRPC binary module because it was not installed for the current system
+Expected directory: node-v72-win32-x64-unknown
+Found: [node-v67-win32-ia32-unknown]
+This problem can often be fixed by running "npm rebuild" on the current system
+Original error: Cannot find module 'C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\node\extension_binary\node-v72-win32-x64-unknown\grpc_node.node'
+Require stack:
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\grpc_extension.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client_interceptors.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\index.js
+- C:\Users\Steve\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js
+    at Object.<anonymous> (C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\grpc_extension.js:53:17)
+    at Module._compile (internal/modules/cjs/loader.js:777:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
+    at Module.load (internal/modules/cjs/loader.js:643:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:683:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at Object.<anonymous> (C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client_interceptors.js:144:12)
+    at Module._compile (internal/modules/cjs/loader.js:777:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
+[warn] !  Your function was killed because it raised an unhandled error.
+[debug] [2019-07-31T04:02:16.636Z] ----------------------------------------------------------------------
+[debug] [2019-07-31T04:02:16.638Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Steve\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-07-31T04:02:16.638Z] CLI Version:   6.10.0
+[debug] [2019-07-31T04:02:16.638Z] Platform:      win32
+[debug] [2019-07-31T04:02:16.638Z] Node Version:  v12.7.0
+[debug] [2019-07-31T04:02:16.639Z] Time:          Wed Jul 31 2019 00:02:16 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-07-31T04:02:16.639Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-07-31T04:02:16.646Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-07-31T04:02:16.646Z] > authorizing via signed-in user
+[debug] [2019-07-31T04:02:16.646Z] [iam] checking project wait-up-5ad7e for permissions ["firebase.projects.get"]
+[debug] [2019-07-31T04:02:16.648Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wait-up-5ad7e:testIamPermissions  
+
+[debug] [2019-07-31T04:02:16.963Z] <<< HTTP RESPONSE 200
+[debug] [2019-07-31T04:02:16.966Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/wait-up-5ad7e  
+ 
+[debug] [2019-07-31T04:02:17.269Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Steve\Desktop\headsup'...
+[info] 
+[warn] !  Your requested "node" version "8" doesn't match your global version "12"
+[debug] [2019-07-31T04:02:17.285Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/603672906124/clients/_:getWebAppConfig  
+ 
+[debug] [2019-07-31T04:02:17.286Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/603672906124:getServerAppConfig  
+ 
+[debug] [2019-07-31T04:02:17.509Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: build
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-07-31T04:02:17.537Z] <<< HTTP RESPONSE 200
+[info] +  functions: Emulator started at http://localhost:5001
+[info] i  functions: Watching "C:\Users\Steve\Desktop\headsup\functions" for Cloud Functions...
+[debug] [2019-07-31T04:02:17.808Z] Functions runtime initialized.
+[debug] [2019-07-31T04:02:17.809Z] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"protect_env":true,"admin_stubs":true}
+[warn] !  Error: Failed to load gRPC binary module because it was not installed for the current system
+Expected directory: node-v72-win32-x64-unknown
+Found: [node-v67-win32-ia32-unknown]
+This problem can often be fixed by running "npm rebuild" on the current system
+Original error: Cannot find module 'C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\node\extension_binary\node-v72-win32-x64-unknown\grpc_node.node'
+Require stack:
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\grpc_extension.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client_interceptors.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client.js
+- C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\index.js
+- C:\Users\Steve\AppData\Roaming\npm\node_modules\firebase-tools\lib\emulator\functionsEmulatorRuntime.js
+    at Object.<anonymous> (C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\grpc_extension.js:53:17)
+    at Module._compile (internal/modules/cjs/loader.js:777:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
+    at Module.load (internal/modules/cjs/loader.js:643:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:556:12)
+    at Module.require (internal/modules/cjs/loader.js:683:19)
+    at require (internal/modules/cjs/helpers.js:16:16)
+    at Object.<anonymous> (C:\Users\Steve\Desktop\headsup\functions\node_modules\grpc\src\client_interceptors.js:144:12)
+    at Module._compile (internal/modules/cjs/loader.js:777:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:788:10)
+[warn] !  Your function was killed because it raised an unhandled error.

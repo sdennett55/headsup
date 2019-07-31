@@ -19,7 +19,7 @@ if ('function' === typeof importScripts) {
     workbox.precaching.precacheAndRoute([
   {
     "url": "asset-manifest.json",
-    "revision": "f64189f78908b9eadb2a4bf9c819e52b"
+    "revision": "5230cb67f22e5d6979534ab2d786b4da"
   },
   {
     "url": "favicon.png",
@@ -51,19 +51,19 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "index.html",
-    "revision": "013a8cfd89f263b94089d201f3804a8c"
+    "revision": "2f25ad27be785b7dd9aadb033795bf57"
   },
   {
     "url": "manifest.json",
     "revision": "4942aa4c9d8b5297ec5cc39baa980ddc"
   },
   {
-    "url": "precache-manifest.dc626b8a125734aa241a255f36d97887.js",
-    "revision": "dc626b8a125734aa241a255f36d97887"
+    "url": "precache-manifest.01cd62cd2aeb9f1767ed7d382b2cecd4.js",
+    "revision": "01cd62cd2aeb9f1767ed7d382b2cecd4"
   },
   {
     "url": "service-worker.js",
-    "revision": "06ccd9863b42ee5770d36660812101d1"
+    "revision": "2141d85e196ec5c78ea67cab1efa204c"
   },
   {
     "url": "static/css/main.f13cd5c4.chunk.css",
@@ -74,312 +74,332 @@ if ('function' === typeof importScripts) {
     "revision": "05d229189d9a46bfd32ee69bc3d7040f"
   },
   {
-    "url": "static/js/main.5d78b8ad.chunk.js",
-    "revision": "f40e95fc5fff6ba0779337c9bbb03f33"
+    "url": "static/js/main.d4a97c59.chunk.js",
+    "revision": "28583a75499c12038d3e8cee6a1b5e90"
   },
   {
     "url": "static/js/runtime~main.a8a9905a.js",
     "revision": "238c9148d722c1b6291779bd879837a1"
   },
   {
-    "url": "static/media/aladdin.d7cf3504.jpg",
-    "revision": "d7cf3504639199f43b62d91ff5536a35"
+    "url": "static/media/aladdin.88f42cbb.jpg",
+    "revision": "88f42cbb4d2a11e3d49c437bb45cdd4a"
   },
   {
-    "url": "static/media/aliens.6a9ad793.jpg",
-    "revision": "6a9ad7937d7e0d0732fae3520ee6bf4f"
+    "url": "static/media/aliens.69285c00.jpg",
+    "revision": "69285c00c64feb6e90bfc119e8fdadf2"
   },
   {
-    "url": "static/media/anna.d1bf64aa.jpg",
-    "revision": "d1bf64aa9c298e141d12d10cf171dc74"
+    "url": "static/media/anna.7de015e6.jpg",
+    "revision": "7de015e65d8b082f16156eaad8a0bad6"
   },
   {
-    "url": "static/media/ariel.b5dce626.jpg",
-    "revision": "b5dce626c1c280c27907e9f8e8d63bb6"
+    "url": "static/media/ariel.a0b4e0d5.jpg",
+    "revision": "a0b4e0d515d94c274b0c290dab2df13b"
   },
   {
-    "url": "static/media/aurora.e9dc6501.jpg",
-    "revision": "e9dc65013c3768fe5e5628de1ca4717d"
+    "url": "static/media/aurora.2db5c8e9.jpg",
+    "revision": "2db5c8e9041dd6ae09bf5ec0573a8492"
   },
   {
-    "url": "static/media/beauty.bce484e6.jpg",
-    "revision": "bce484e6a5860b91f6106c699f4ba282"
+    "url": "static/media/beauty.e1689a95.jpg",
+    "revision": "e1689a955c95e00cdf049ce1acc300d9"
   },
   {
-    "url": "static/media/bruce.30b8ca70.jpg",
-    "revision": "30b8ca708f1c1134933bb5b75fcb1c56"
+    "url": "static/media/bruce.161612ae.jpg",
+    "revision": "161612ae8a0b652fa8d1cedf8c520892"
   },
   {
-    "url": "static/media/buzz_lightyear.a97df1ab.jpg",
-    "revision": "a97df1ab9608431b4c2c0da87aadcffe"
+    "url": "static/media/buzz_lightyear.8eb4429c.jpg",
+    "revision": "8eb4429c0f2bf5be120607ba66f26193"
   },
   {
-    "url": "static/media/captain_jack_sparrow.37d3a2c5.jpg",
-    "revision": "37d3a2c59f2404f4cfe1770146010588"
+    "url": "static/media/captain_jack_sparrow.cffcd24e.jpg",
+    "revision": "cffcd24eff13751f466be2d31947ffdb"
   },
   {
-    "url": "static/media/carpet.3f5f7cce.jpg",
-    "revision": "3f5f7cce1cca2d79165dd0c477016eda"
+    "url": "static/media/carpet.aa50e769.jpg",
+    "revision": "aa50e769f30009d9f6f9c019eccdaca3"
   },
   {
-    "url": "static/media/crush.86c8a187.jpg",
-    "revision": "86c8a187a20a2efd8e5b3b344cd1d2d0"
+    "url": "static/media/christopher_robin.17492c8e.jpg",
+    "revision": "17492c8ed88ebb202e4dd151489ae470"
   },
   {
-    "url": "static/media/daisy_duck.0aba4c7c.jpg",
-    "revision": "0aba4c7c5c52c32b98f135ba4bfcbb34"
+    "url": "static/media/crush.a4d8e327.jpg",
+    "revision": "a4d8e3272081b5bc5934c64c588c865d"
   },
   {
-    "url": "static/media/doc_hudson.16bc16fd.jpg",
-    "revision": "16bc16fde87bd0b949225f4e131d65ce"
+    "url": "static/media/daisy_duck.686b302e.jpg",
+    "revision": "686b302ef3501b14d3f58df31e53ef39"
   },
   {
-    "url": "static/media/donald_duck.c482c963.jpg",
-    "revision": "c482c963a9c78aebc879706b7fe6d483"
+    "url": "static/media/doc_hudson.da90917b.jpg",
+    "revision": "da90917bc781cb2b3d91b35c25f4f09c"
   },
   {
-    "url": "static/media/dory.a68bb908.jpg",
-    "revision": "a68bb90818e968f67cc0be2f460a035c"
+    "url": "static/media/donald_duck.d8a3854f.jpg",
+    "revision": "d8a3854f4e8181ebc19d733a6330544f"
   },
   {
-    "url": "static/media/duke_of_weselton.4f3cae2b.jpg",
-    "revision": "4f3cae2b6ee9f4d987b2df078746c12f"
+    "url": "static/media/dory.fd371532.jpg",
+    "revision": "fd37153247eb790d5fcaca71e1a847cf"
   },
   {
-    "url": "static/media/elena.05ac985b.jpg",
-    "revision": "05ac985ba9db7290fd2ccb47422f223e"
+    "url": "static/media/duke_of_weselton.de5c8aba.jpg",
+    "revision": "de5c8abacea2fc9e30d0ba50552db6c8"
   },
   {
-    "url": "static/media/elsa.5aa6bb3a.jpg",
-    "revision": "5aa6bb3a6b8c36fc7583dfe38ea33816"
+    "url": "static/media/elena.472d30e4.jpg",
+    "revision": "472d30e4324a14efe2d12fb8662ebd67"
   },
   {
-    "url": "static/media/fawn.486c365c.jpg",
-    "revision": "486c365cef857115399e91650de06c17"
+    "url": "static/media/elsa.aa0992d0.jpg",
+    "revision": "aa0992d066237c15a52ec9b5192d73ac"
   },
   {
-    "url": "static/media/fillmore.5b5f21c8.jpg",
-    "revision": "5b5f21c8c24300f9e221fa6f089c6279"
+    "url": "static/media/fawn.9f550422.jpg",
+    "revision": "9f550422f544413eaef95c8b4694a1bd"
   },
   {
-    "url": "static/media/flo.d86ebf93.jpg",
-    "revision": "d86ebf93f82cf4e469ca3338c0c19209"
+    "url": "static/media/fillmore.04100f82.jpg",
+    "revision": "04100f82cb4034aea5e78a9b1ec307f5"
   },
   {
-    "url": "static/media/flounder.14c07945.jpg",
-    "revision": "14c07945657c06fe92bb3d8bd03c2867"
+    "url": "static/media/flo.88fff3da.jpg",
+    "revision": "88fff3da9959fc94768c3fce949f300d"
+  },
+  {
+    "url": "static/media/flounder.221bbe8a.jpg",
+    "revision": "221bbe8a8b017d8580a4bb305037b41b"
   },
   {
     "url": "static/media/gear.3f977a74.svg",
     "revision": "3f977a74e22d054181b0e69efe84e5af"
   },
   {
-    "url": "static/media/genie.2eff55da.jpg",
-    "revision": "2eff55da93bcb147346dccaeaab46488"
+    "url": "static/media/genie.446f5df8.jpg",
+    "revision": "446f5df89c04cd6c5c3d52cba90e6b8c"
   },
   {
-    "url": "static/media/goofy.82e33f9d.jpg",
-    "revision": "82e33f9dc15551f3087e321fdca48cb5"
+    "url": "static/media/goofy.7f7afa25.jpg",
+    "revision": "7f7afa25042079ea2e7aea88ae2cbb7a"
   },
   {
-    "url": "static/media/hans.0278c5ea.jpg",
-    "revision": "0278c5ea1fca3ccf5ac13adff5acda43"
+    "url": "static/media/hans.acd04f3a.jpg",
+    "revision": "acd04f3a498f03948eae6aa88e8ccb6d"
   },
   {
-    "url": "static/media/iago.f6fa34a5.jpg",
-    "revision": "f6fa34a56e5477267c5002582d3b31f9"
+    "url": "static/media/iago.1da9b7d9.jpg",
+    "revision": "1da9b7d96e1d11b6d4c0190e677ad4a3"
   },
   {
-    "url": "static/media/iridessa.181ecc41.jpg",
-    "revision": "181ecc413623cf15757d77035237bb4d"
+    "url": "static/media/iridessa.9d90a9cc.jpg",
+    "revision": "9d90a9ccc06084810da5e80eb9699205"
   },
   {
-    "url": "static/media/jafar.fab182d1.jpg",
-    "revision": "fab182d1313b14339e845decb98bff69"
+    "url": "static/media/jafar.197067a5.jpg",
+    "revision": "197067a5297605fb5f299a601049952b"
   },
   {
-    "url": "static/media/jasmine.6fc90898.jpg",
-    "revision": "6fc90898784ae2e46f208a2df992b9b6"
+    "url": "static/media/jasmine.4269913e.jpg",
+    "revision": "4269913e14856d2100f9abec52e127d6"
   },
   {
-    "url": "static/media/jessie.3b62c2ac.jpg",
-    "revision": "3b62c2ace9202799c25d6404e7ad96f8"
+    "url": "static/media/jessie.d30532db.jpg",
+    "revision": "d30532db5051805411716e1bd6c96d56"
   },
   {
-    "url": "static/media/kanga_&_roo.54b5125f.jpg",
-    "revision": "54b5125fd1159d332f0ee1ddb5cc2df9"
+    "url": "static/media/kanga_&_roo.dd869e74.jpg",
+    "revision": "dd869e74174f380581b34df7a1c3d111"
   },
   {
-    "url": "static/media/king_triton.05016e14.jpg",
-    "revision": "05016e14356afa65eceb7a3fe0462b70"
+    "url": "static/media/king_triton.b5236f2d.jpg",
+    "revision": "b5236f2d4f18805ef28a51ba00f5f71f"
   },
   {
-    "url": "static/media/kristoff.2c60b4e8.jpg",
-    "revision": "2c60b4e856ff232d6182fc50451d0dbb"
+    "url": "static/media/kristoff.96d2dea6.jpg",
+    "revision": "96d2dea63f0e5d8ed6df9999801a62a3"
   },
   {
-    "url": "static/media/lightning_mcqueen.40ca5cbd.jpg",
-    "revision": "40ca5cbd5d4b640c23debeff675be959"
+    "url": "static/media/lightning_mcqueen.635eceab.jpg",
+    "revision": "635eceab1bd49b352ea23f0427006b38"
   },
   {
-    "url": "static/media/luigi.a462eca3.jpg",
-    "revision": "a462eca3823b3bbb9bf615dc7e4e0237"
+    "url": "static/media/luigi.b8aa9f39.jpg",
+    "revision": "b8aa9f394c9bd3ff05e6b4897e09ac8f"
   },
   {
-    "url": "static/media/marshmallow.3e3eeafe.jpg",
-    "revision": "3e3eeafef9f9ebf45defbf64bc84c863"
+    "url": "static/media/marshmallow.4373fe08.jpg",
+    "revision": "4373fe08844acc8923d7db1261d93127"
   },
   {
-    "url": "static/media/mater.93a5afd1.jpg",
-    "revision": "93a5afd16abcfdb8bb889ef9bee9ccce"
+    "url": "static/media/mater.6348f896.jpg",
+    "revision": "6348f896dcdebe59d881deb6614a9692"
   },
   {
-    "url": "static/media/merida.210fbfd8.jpg",
-    "revision": "210fbfd87a4b5094dbf9de4d3bbfc2f8"
+    "url": "static/media/merida.c5067c5d.jpg",
+    "revision": "c5067c5d82ea5da4c84297cc07efea5d"
   },
   {
-    "url": "static/media/mickey_mouse.3f10d0b2.jpg",
-    "revision": "3f10d0b2f4e63cfda4a5743a39c9b4a7"
+    "url": "static/media/mickey_mouse.4fc58a8b.jpg",
+    "revision": "4fc58a8b68250772c876fc7b56feef82"
   },
   {
-    "url": "static/media/minnie_mouse.76950db2.jpg",
-    "revision": "76950db2b31775158eb9b6ec5e619ba5"
+    "url": "static/media/minnie_mouse.e057d336.jpg",
+    "revision": "e057d336dcd6a872b20debd774810bd5"
   },
   {
-    "url": "static/media/mr._potato_head.0ac076a3.jpg",
-    "revision": "0ac076a3f64e43541c56fae5c727b36e"
+    "url": "static/media/mr._potato_head.874a4cc2.jpg",
+    "revision": "874a4cc2a93612f0ead279f3a613d874"
   },
   {
-    "url": "static/media/mufasa.62732583.jpg",
-    "revision": "6273258310dad92b4b17c3c06c0c1bcc"
+    "url": "static/media/mufasa.69df0131.jpg",
+    "revision": "69df0131f5d0ddfe1e9c2c59d34d3987"
   },
   {
-    "url": "static/media/nala.7273636f.jpg",
-    "revision": "7273636f3056eaef9f2501405f14e740"
+    "url": "static/media/mulan.67e20a0c.jpg",
+    "revision": "67e20a0c29724f35727f9d5e17748046"
   },
   {
-    "url": "static/media/oaken.d9f95737.jpg",
-    "revision": "d9f9573753f0520ddfedab7c6a5379fc"
+    "url": "static/media/nala.58ac4751.jpg",
+    "revision": "58ac475112e77005d1978dbbcfe1db4f"
   },
   {
-    "url": "static/media/olaf.d14fc31b.jpg",
-    "revision": "d14fc31be55180338988b64104fff9b5"
+    "url": "static/media/oaken.13faf1cf.jpg",
+    "revision": "13faf1cfa438a9663d9f66c7fa1e8a52"
   },
   {
-    "url": "static/media/peach.ba0ad77f.jpg",
-    "revision": "ba0ad77f2dafc3981541e80dad7bdb22"
+    "url": "static/media/olaf.4ce50bb1.jpg",
+    "revision": "4ce50bb18fce882fba754af5ce68952e"
   },
   {
-    "url": "static/media/pluto.cf3ae428.jpg",
-    "revision": "cf3ae42843fd153dedab292ff228fb58"
+    "url": "static/media/owl.515c1fc0.jpg",
+    "revision": "515c1fc05cbe492ac97a7b148e0944c4"
   },
   {
-    "url": "static/media/pumba.ec499670.jpg",
-    "revision": "ec499670d2ba3a52175842996ff1a174"
+    "url": "static/media/peach.32c032c8.jpg",
+    "revision": "32c032c86f15e1c123936094e617607f"
   },
   {
-    "url": "static/media/rabbit.24619ec6.jpg",
-    "revision": "24619ec6d3059739e1e2e868c3a1712f"
+    "url": "static/media/pluto.1da58ba0.jpg",
+    "revision": "1da58ba00aa2f541baa8e20a4e57bee9"
   },
   {
-    "url": "static/media/rafiki.0d755118.jpg",
-    "revision": "0d7551185a842a67cdd03818d8cf535b"
+    "url": "static/media/prince_eric.9e2c74e9.jpg",
+    "revision": "9e2c74e9216875f1d69801e9e42b4f31"
   },
   {
-    "url": "static/media/rajah.c8cedd11.jpg",
-    "revision": "c8cedd110d81de65f6a5ed57672f6835"
+    "url": "static/media/pumba.62e2f832.jpg",
+    "revision": "62e2f83272f2cde09aa3bccf81b3f7f9"
   },
   {
-    "url": "static/media/ramone.e585e01b.jpg",
-    "revision": "e585e01bed6fed2cae126c2e86ab1d8f"
+    "url": "static/media/rabbit.3e59734a.jpg",
+    "revision": "3e59734a3f2659aa54d182ba842ecb72"
   },
   {
-    "url": "static/media/rapunzel.8380a199.jpg",
-    "revision": "8380a19936340c80a6089f5f5862815c"
+    "url": "static/media/rafiki.e6e3bab6.jpg",
+    "revision": "e6e3bab6f1e076d514587202a2ecda8b"
   },
   {
-    "url": "static/media/rex.547ece9f.jpg",
-    "revision": "547ece9f8e43a083d38a4a50d3784f1c"
+    "url": "static/media/rajah.2da4e760.jpg",
+    "revision": "2da4e760150a8c8c97fc70d870770810"
   },
   {
-    "url": "static/media/rosetta.0f56dbf3.jpg",
-    "revision": "0f56dbf3418a04316a5f785adddef1aa"
+    "url": "static/media/ramone.c1de53d5.jpg",
+    "revision": "c1de53d5408d775563220d3cfefef44e"
   },
   {
-    "url": "static/media/sarge.63dabf25.jpg",
-    "revision": "63dabf25c20a7081d9d0a960723908c8"
+    "url": "static/media/rapunzel.10e397f6.jpg",
+    "revision": "10e397f683bf0174be656d0b36e58fc1"
   },
   {
-    "url": "static/media/scar.c9bc014f.jpg",
-    "revision": "c9bc014f38d81aa2b149259a5006a417"
+    "url": "static/media/rex.999c68a0.jpg",
+    "revision": "999c68a01b95812780f9b249b4af7d6b"
   },
   {
-    "url": "static/media/scuttle.48376521.jpg",
-    "revision": "48376521eeeafe398833c20d64da99dc"
+    "url": "static/media/rosetta.dfe4d275.jpg",
+    "revision": "dfe4d27565aa9456b42034b59e4c8734"
   },
   {
-    "url": "static/media/silvermist.1171b130.jpg",
-    "revision": "1171b130a061fde04f382493d0338dbe"
+    "url": "static/media/sally.bbe3b383.jpg",
+    "revision": "bbe3b383ea2cb5639a23ee7b47215861"
   },
   {
-    "url": "static/media/simba.45d90068.jpg",
-    "revision": "45d900686b12179c5a0ee3a9195b38fe"
+    "url": "static/media/sarge.0c5ad1f6.jpg",
+    "revision": "0c5ad1f6e6a13cad6ba1d4e2fea944c4"
   },
   {
-    "url": "static/media/slinky_dog.85dbb99c.jpg",
-    "revision": "85dbb99ce9a2cb2e74a4b446086d2b44"
+    "url": "static/media/scar.3c6051aa.jpg",
+    "revision": "3c6051aa7369a083cd915c078a8981ad"
   },
   {
-    "url": "static/media/snow_white.c48cc062.jpg",
-    "revision": "c48cc062b7573f3380e5e73833006015"
+    "url": "static/media/scuttle.d3647ca6.jpg",
+    "revision": "d3647ca6d0baae8ce77c6f6b2dbcb005"
   },
   {
-    "url": "static/media/snowgies.391422c4.jpg",
-    "revision": "391422c4e1064122f30ed7738f6751fa"
+    "url": "static/media/silvermist.05c267e4.jpg",
+    "revision": "05c267e491f381a92b08fe06fb0a129f"
   },
   {
-    "url": "static/media/squirt.ab55abc2.jpg",
-    "revision": "ab55abc2d068716a8682fd4c9c84816b"
+    "url": "static/media/simba.f63af41e.jpg",
+    "revision": "f63af41e312b2e79bbbfea1d65a1b5bb"
+  },
+  {
+    "url": "static/media/slinky_dog.d1ea1b6b.jpg",
+    "revision": "d1ea1b6b2e2c3bf41690ffcb922797bb"
+  },
+  {
+    "url": "static/media/snow_white.ab8db16d.jpg",
+    "revision": "ab8db16d5a8e60646fae050f740779f5"
+  },
+  {
+    "url": "static/media/snowgies.178925fb.jpg",
+    "revision": "178925fb40469da1822a6690b591fc31"
+  },
+  {
+    "url": "static/media/squirt.4b3a8e87.jpg",
+    "revision": "4b3a8e87b09ed7fa559c4ad68d0d03ac"
   },
   {
     "url": "static/media/stars.82d3d893.svg",
     "revision": "82d3d89309f46fab5b39ab566c92ba21"
   },
   {
-    "url": "static/media/sultan.b68315ae.jpg",
-    "revision": "b68315aed816a441eb38bab0bb360495"
+    "url": "static/media/sultan.aa2ae5cd.jpg",
+    "revision": "aa2ae5cded8bda2f86bab8198bd72860"
   },
   {
-    "url": "static/media/sven.80adb5d4.jpg",
-    "revision": "80adb5d468d93615bd455a87a3b07de5"
+    "url": "static/media/sven.a778c1f6.jpg",
+    "revision": "a778c1f6e0d6d8e18c3c3223b091097c"
   },
   {
-    "url": "static/media/tiana.3ee3270d.jpg",
-    "revision": "3ee3270de2684ac4c92c00fcd15d046c"
+    "url": "static/media/tiana.fcb1513f.jpg",
+    "revision": "fcb1513f208b0c7ef64ae02f86776b17"
   },
   {
-    "url": "static/media/tigger.d37a55c6.jpg",
-    "revision": "d37a55c67b405ea3b785d3039a2de9f5"
+    "url": "static/media/tigger.dd28af6b.jpg",
+    "revision": "dd28af6b426bf63bf676e7b3a341ba76"
   },
   {
-    "url": "static/media/timon.564c32d4.jpg",
-    "revision": "564c32d45274f214fcfcd94c7c002e44"
+    "url": "static/media/timon.243dfc88.jpg",
+    "revision": "243dfc886d78b92d2e4a71837c19f671"
   },
   {
-    "url": "static/media/ursula.7e6b4af7.jpg",
-    "revision": "7e6b4af7a2a48cfd9a2c7d4b2ccd7ff6"
+    "url": "static/media/ursula.ffcb3610.jpg",
+    "revision": "ffcb36108ccbbde60036b1a049a1d598"
   },
   {
-    "url": "static/media/vidia.e15e779b.jpg",
-    "revision": "e15e779bd88b0e77d9d05902d3c12f83"
+    "url": "static/media/vidia.d577f064.jpg",
+    "revision": "d577f064302e4bcaeb0056f48095cced"
   },
   {
-    "url": "static/media/woody.a8480b72.jpg",
-    "revision": "a8480b728b89a23cd34add3d2aaaaa60"
+    "url": "static/media/woody.f2b85fe4.jpg",
+    "revision": "f2b85fe424d3a212df14b98b8bf50e06"
   },
   {
-    "url": "static/media/zasu.b2521ae1.jpg",
-    "revision": "b2521ae17d87ce439cf4c40b7281d9f3"
+    "url": "static/media/zasu.b5143896.jpg",
+    "revision": "b5143896e64e7fdc0b1879d890a5fc7f"
   }
 ]);
 

@@ -4,7 +4,7 @@ var prettier = require('prettier');
 var all_images = [];
 var new_object = {};
 
-const files = fs.readdirSync(`${__dirname}/images`);
+const files = fs.readdirSync(`${__dirname}/images/output`);
 const jpgs = files.filter(file => file.includes('.jpg'));
 jpgs.forEach(file => {
   let file_without_extension = file.replace('.jpg', '');
@@ -17,7 +17,7 @@ jpgs.forEach(file => {
     file2 = file_without_extension;
   }
   all_images.push(
-    `import ${file2} from './images/${file}';`
+    `import ${file2} from './images/output/${file}';`
   );
 
   new_object[file_without_extension] = file2;

@@ -26,6 +26,7 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "prettier": "^1.18.2",
+    "sharp": "^0.23.0",
     "workbox-build": "^4.3.1"
   },
   "scripts": {
@@ -35,7 +36,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "build-sw": "node ./src/sw-build.js",
-    "image-importer": "node src/auto_images.js"
+    "image-importer": "node src/resize_images.js && node src/auto_images.js"
   },
   "browserslist": [
     ">0.2%",
