@@ -25,15 +25,17 @@
   },
   "devDependencies": {
     "concurrently": "^4.1.0",
+    "prettier": "^1.18.2",
     "workbox-build": "^4.3.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && workbox injectManifest workbox-config.js",
+    "build": "npm run image-importer && react-scripts build && workbox injectManifest workbox-config.js",
     "dev": "concurrently --kill-others \"npm run build\" && firebase serve",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "build-sw": "node ./src/sw-build.js"
+    "build-sw": "node ./src/sw-build.js",
+    "image-importer": "node src/auto_images.js"
   },
   "browserslist": [
     ">0.2%",

@@ -1,19 +1,23 @@
 self.__precacheManifest = [
   {
-    "revision": "6ab20d2c5fa23529a666",
+    "revision": "7277171dfbe60088a87f",
     "url": "/static/css/main.f13cd5c4.chunk.css"
   },
   {
-    "revision": "6ab20d2c5fa23529a666",
-    "url": "/static/js/main.c40a589e.chunk.js"
+    "revision": "7277171dfbe60088a87f",
+    "url": "/static/js/main.5d78b8ad.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "b8459138d1ecfd7f3ca7",
-    "url": "/static/js/2.a136ec79.chunk.js"
+    "revision": "6dea59d2ea4321142ede",
+    "url": "/static/js/2.36b8aaf8.chunk.js"
+  },
+  {
+    "revision": "d7cf3504639199f43b62d91ff5536a35",
+    "url": "/static/media/aladdin.d7cf3504.jpg"
   },
   {
     "revision": "6a9ad7937d7e0d0732fae3520ee6bf4f",
@@ -36,12 +40,24 @@ self.__precacheManifest = [
     "url": "/static/media/beauty.bce484e6.jpg"
   },
   {
+    "revision": "30b8ca708f1c1134933bb5b75fcb1c56",
+    "url": "/static/media/bruce.30b8ca70.jpg"
+  },
+  {
     "revision": "a97df1ab9608431b4c2c0da87aadcffe",
     "url": "/static/media/buzz_lightyear.a97df1ab.jpg"
   },
   {
     "revision": "37d3a2c59f2404f4cfe1770146010588",
     "url": "/static/media/captain_jack_sparrow.37d3a2c5.jpg"
+  },
+  {
+    "revision": "3f5f7cce1cca2d79165dd0c477016eda",
+    "url": "/static/media/carpet.3f5f7cce.jpg"
+  },
+  {
+    "revision": "86c8a187a20a2efd8e5b3b344cd1d2d0",
+    "url": "/static/media/crush.86c8a187.jpg"
   },
   {
     "revision": "0aba4c7c5c52c32b98f135ba4bfcbb34",
@@ -54,6 +70,10 @@ self.__precacheManifest = [
   {
     "revision": "c482c963a9c78aebc879706b7fe6d483",
     "url": "/static/media/donald_duck.c482c963.jpg"
+  },
+  {
+    "revision": "a68bb90818e968f67cc0be2f460a035c",
+    "url": "/static/media/dory.a68bb908.jpg"
   },
   {
     "revision": "4f3cae2b6ee9f4d987b2df078746c12f",
@@ -80,6 +100,14 @@ self.__precacheManifest = [
     "url": "/static/media/flo.d86ebf93.jpg"
   },
   {
+    "revision": "14c07945657c06fe92bb3d8bd03c2867",
+    "url": "/static/media/flounder.14c07945.jpg"
+  },
+  {
+    "revision": "2eff55da93bcb147346dccaeaab46488",
+    "url": "/static/media/genie.2eff55da.jpg"
+  },
+  {
     "revision": "82e33f9dc15551f3087e321fdca48cb5",
     "url": "/static/media/goofy.82e33f9d.jpg"
   },
@@ -88,8 +116,16 @@ self.__precacheManifest = [
     "url": "/static/media/hans.0278c5ea.jpg"
   },
   {
+    "revision": "f6fa34a56e5477267c5002582d3b31f9",
+    "url": "/static/media/iago.f6fa34a5.jpg"
+  },
+  {
     "revision": "181ecc413623cf15757d77035237bb4d",
     "url": "/static/media/iridessa.181ecc41.jpg"
+  },
+  {
+    "revision": "fab182d1313b14339e845decb98bff69",
+    "url": "/static/media/jafar.fab182d1.jpg"
   },
   {
     "revision": "6fc90898784ae2e46f208a2df992b9b6",
@@ -102,6 +138,10 @@ self.__precacheManifest = [
   {
     "revision": "54b5125fd1159d332f0ee1ddb5cc2df9",
     "url": "/static/media/kanga_&_roo.54b5125f.jpg"
+  },
+  {
+    "revision": "05016e14356afa65eceb7a3fe0462b70",
+    "url": "/static/media/king_triton.05016e14.jpg"
   },
   {
     "revision": "2c60b4e856ff232d6182fc50451d0dbb",
@@ -156,6 +196,10 @@ self.__precacheManifest = [
     "url": "/static/media/olaf.d14fc31b.jpg"
   },
   {
+    "revision": "ba0ad77f2dafc3981541e80dad7bdb22",
+    "url": "/static/media/peach.ba0ad77f.jpg"
+  },
+  {
     "revision": "cf3ae42843fd153dedab292ff228fb58",
     "url": "/static/media/pluto.cf3ae428.jpg"
   },
@@ -170,6 +214,10 @@ self.__precacheManifest = [
   {
     "revision": "0d7551185a842a67cdd03818d8cf535b",
     "url": "/static/media/rafiki.0d755118.jpg"
+  },
+  {
+    "revision": "c8cedd110d81de65f6a5ed57672f6835",
+    "url": "/static/media/rajah.c8cedd11.jpg"
   },
   {
     "revision": "e585e01bed6fed2cae126c2e86ab1d8f",
@@ -196,24 +244,36 @@ self.__precacheManifest = [
     "url": "/static/media/scar.c9bc014f.jpg"
   },
   {
-    "revision": "1171b130a061fde04f382493d0338dbe",
-    "url": "/static/media/silvermist.1171b130.jpg"
+    "revision": "48376521eeeafe398833c20d64da99dc",
+    "url": "/static/media/scuttle.48376521.jpg"
   },
   {
-    "revision": "85dbb99ce9a2cb2e74a4b446086d2b44",
-    "url": "/static/media/slinky_dog.85dbb99c.jpg"
+    "revision": "1171b130a061fde04f382493d0338dbe",
+    "url": "/static/media/silvermist.1171b130.jpg"
   },
   {
     "revision": "45d900686b12179c5a0ee3a9195b38fe",
     "url": "/static/media/simba.45d90068.jpg"
   },
   {
-    "revision": "c48cc062b7573f3380e5e73833006015",
-    "url": "/static/media/snow_white.c48cc062.jpg"
+    "revision": "85dbb99ce9a2cb2e74a4b446086d2b44",
+    "url": "/static/media/slinky_dog.85dbb99c.jpg"
   },
   {
     "revision": "391422c4e1064122f30ed7738f6751fa",
     "url": "/static/media/snowgies.391422c4.jpg"
+  },
+  {
+    "revision": "c48cc062b7573f3380e5e73833006015",
+    "url": "/static/media/snow_white.c48cc062.jpg"
+  },
+  {
+    "revision": "ab55abc2d068716a8682fd4c9c84816b",
+    "url": "/static/media/squirt.ab55abc2.jpg"
+  },
+  {
+    "revision": "b68315aed816a441eb38bab0bb360495",
+    "url": "/static/media/sultan.b68315ae.jpg"
   },
   {
     "revision": "80adb5d468d93615bd455a87a3b07de5",
@@ -230,6 +290,10 @@ self.__precacheManifest = [
   {
     "revision": "564c32d45274f214fcfcd94c7c002e44",
     "url": "/static/media/timon.564c32d4.jpg"
+  },
+  {
+    "revision": "7e6b4af7a2a48cfd9a2c7d4b2ccd7ff6",
+    "url": "/static/media/ursula.7e6b4af7.jpg"
   },
   {
     "revision": "e15e779bd88b0e77d9d05902d3c12f83",
@@ -252,7 +316,7 @@ self.__precacheManifest = [
     "url": "/static/media/gear.3f977a74.svg"
   },
   {
-    "revision": "636793530fe64c5ea5243f1aaa01fc34",
+    "revision": "013a8cfd89f263b94089d201f3804a8c",
     "url": "/index.html"
   }
 ];
