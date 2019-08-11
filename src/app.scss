@@ -76,14 +76,20 @@ body {
     top: 50%;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
+    width: 100%;
   }
   &-text {
     @media screen and (orientation: portrait) {
+      width: 100vh;
       -webkit-transform: rotate(-90deg) translateX(-50%) translateY(-50%);
       transform: rotate(-90deg) translateX(-50%) translateY(-50%);
       -webkit-transform-origin: 0 0;
       transform-origin: 0 0;
     }
+  }
+  &-smText {
+    display: block;
+    font-size: 1.5rem;
   }
   &-timerText {
     font-size: 4em;

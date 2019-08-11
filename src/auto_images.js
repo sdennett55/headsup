@@ -4,10 +4,12 @@ var prettier = require('prettier');
 var all_images = [];
 var new_object = {};
 
-const files = fs.readdirSync(`${__dirname}/images/output`);
-const jpgs = files.filter(file => file.includes('.jpg'));
-jpgs.forEach(file => {
+const files = fs.readdirSync(`${__dirname}/output`);
+const formats = files.filter(file => file.includes('.jpg') || file.includes('.png'));
+formats.forEach(file => {
+  console.log(file);
   let file_without_extension = file.replace('.jpg', '');
+  file_without_extension = file_without_extension.replace('.png', '');
   let file2 = file_without_extension;
   if (file.includes('._')) {
     file2 = file_without_extension.replace('._', '_');
@@ -17,7 +19,7 @@ jpgs.forEach(file => {
     file2 = file_without_extension;
   }
   all_images.push(
-    `import ${file2} from './images/output/${file}';`
+    `import ${file2} from './output/${file}';`
   );
 
   new_object[file_without_extension] = file2;

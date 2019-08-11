@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "b32c0b6da5c3e3a9e12c",
-    "url": "/static/css/main.f13cd5c4.chunk.css"
+    "revision": "1f53bac9e1736b62550b",
+    "url": "/static/css/main.79b6ebf4.chunk.css"
   },
   {
-    "revision": "b32c0b6da5c3e3a9e12c",
-    "url": "/static/js/main.d4a97c59.chunk.js"
+    "revision": "1f53bac9e1736b62550b",
+    "url": "/static/js/main.4c02085c.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
     "url": "/static/js/runtime~main.a8a9905a.js"
   },
   {
-    "revision": "6dea59d2ea4321142ede",
-    "url": "/static/js/2.36b8aaf8.chunk.js"
+    "revision": "ac7b524225fc7bc66d4f",
+    "url": "/static/js/2.02f963ec.chunk.js"
   },
   {
     "revision": "88f42cbb4d2a11e3d49c437bb45cdd4a",
@@ -68,8 +68,8 @@ self.__precacheManifest = [
     "url": "/static/media/daisy_duck.686b302e.jpg"
   },
   {
-    "revision": "da90917bc781cb2b3d91b35c25f4f09c",
-    "url": "/static/media/doc_hudson.da90917b.jpg"
+    "revision": "44c7498f5e6a65eddc122fc63df7f950",
+    "url": "/static/media/doc_hudson.44c7498f.jpg"
   },
   {
     "revision": "d8a3854f4e8181ebc19d733a6330544f",
@@ -100,8 +100,8 @@ self.__precacheManifest = [
     "url": "/static/media/fillmore.04100f82.jpg"
   },
   {
-    "revision": "88fff3da9959fc94768c3fce949f300d",
-    "url": "/static/media/flo.88fff3da.jpg"
+    "revision": "9fe61b256349561f7dc2c96e0f5ad0ee",
+    "url": "/static/media/flo.9fe61b25.jpg"
   },
   {
     "revision": "221bbe8a8b017d8580a4bb305037b41b",
@@ -118,6 +118,10 @@ self.__precacheManifest = [
   {
     "revision": "acd04f3a498f03948eae6aa88e8ccb6d",
     "url": "/static/media/hans.acd04f3a.jpg"
+  },
+  {
+    "revision": "ac84029054bff251b36f49aafdeead3a",
+    "url": "/static/media/heihei.ac840290.png"
   },
   {
     "revision": "1da9b7d96e1d11b6d4c0190e677ad4a3",
@@ -168,6 +172,10 @@ self.__precacheManifest = [
     "url": "/static/media/mater.6348f896.jpg"
   },
   {
+    "revision": "2a2c3202f9e7e90ed46d93357e3e3aad",
+    "url": "/static/media/maui.2a2c3202.png"
+  },
+  {
     "revision": "c5067c5d82ea5da4c84297cc07efea5d",
     "url": "/static/media/merida.c5067c5d.jpg"
   },
@@ -178,6 +186,10 @@ self.__precacheManifest = [
   {
     "revision": "e057d336dcd6a872b20debd774810bd5",
     "url": "/static/media/minnie_mouse.e057d336.jpg"
+  },
+  {
+    "revision": "17fcc89b3cd4243a9013bfb712d54610",
+    "url": "/static/media/moana.17fcc89b.png"
   },
   {
     "revision": "874a4cc2a93612f0ead279f3a613d874",
@@ -336,7 +348,7 @@ self.__precacheManifest = [
     "url": "/static/media/gear.3f977a74.svg"
   },
   {
-    "revision": "2f25ad27be785b7dd9aadb033795bf57",
+    "revision": "b2781fa860ddf73d9c2a2fb4a0738d1b",
     "url": "/index.html"
   }
 ];

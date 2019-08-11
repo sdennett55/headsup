@@ -13,6 +13,7 @@ import "./app.scss";
 import fire from "./config/fire";
 import * as serviceWorker from './serviceWorker';
 import { isIOS } from "react-device-detect";
+import ReactGA from 'react-ga';
 
 const DEFAULT_GAME_TIMER = 60;
 const START_TIMER = 3;
@@ -47,6 +48,7 @@ class App extends React.Component {
 
   async componentDidMount() {
     // this.authListener();
+    this.initializeReactGA();
 
     this.fetchData();
 
@@ -100,6 +102,11 @@ class App extends React.Component {
     }
   }
 
+  initializeReactGA = () => {
+    ReactGA.initialize('UA-145119899-1');
+    ReactGA.pageview('/homepage');
+  }
+
   reshuffleDecks = () => {
     if (isIOS && navigator.onLine) {
       window.location.reload(true);
@@ -140,7 +147,7 @@ class App extends React.Component {
   onDeviceMotion = event => {
     if (
       (this.state.isStaging || this.state.isGameInProgress) &&
-      event.acceleration.x > 35
+      event.acceleration.x > 30
     ) {
       this.resetGame();
       this.backToMenu();
@@ -241,7 +248,8 @@ class App extends React.Component {
       isGameInProgress: false,
       isStaging: false,
       isGameOver: false,
-      isResults: true
+      isResults: true,
+      isAnimating: ''
     }));
   };
 
@@ -257,6 +265,13 @@ class App extends React.Component {
     });
     this.getNextItem();
     await this.onInGameTimerComplete();
+
+    // Track that a game was completed
+    ReactGA.event({
+      category: 'Play',
+      action: 'Game played'
+    });
+
     this.resetGame();
   };
 
@@ -273,8 +288,20 @@ class App extends React.Component {
           score: prevState.score + 1,
           isAnimating: "correct"
         }));
+
+        // Tracking
+        ReactGA.event({
+          category: 'Play',
+          action: 'Correct guess'
+        });
       } else {
         this.setState({ isAnimating: "skip" });
+
+        // Tracking
+        ReactGA.event({
+          category: 'Play',
+          action: 'Skipped guess'
+        });
       }
     }
   };
@@ -407,13 +434,13 @@ class App extends React.Component {
                   </button>
                   <button className="Menu-settingsBtn" onClick={this.handleSettingsModal}><Gear className="hey" /></button>
                   {this.state.isSettingsModalOpen && (
-                    <SettingsModal 
-                      handleModalClose={this.handleSettingsModal} 
-                      handleSoundEffects={this.handleSoundEffects} 
-                      enableSoundEffects={this.state.enableSoundEffects} 
+                    <SettingsModal
+                      handleModalClose={this.handleSettingsModal}
+                      handleSoundEffects={this.handleSoundEffects}
+                      enableSoundEffects={this.state.enableSoundEffects}
                       handleGameClock={this.handleGameClock}
                       gameClock={this.state.gameClock}
-                      closeBtnRight 
+                      closeBtnRight
                     />
                   )}
                 </>
@@ -444,7 +471,11 @@ class App extends React.Component {
                       {this.state.startGameTimer}
                     </span>
                   ) : (
-                      <span className="Staging-text">Place on forehead</span>
+                      <>
+                        <span className="Staging-text">Place on forehead   
+                          <span className="Staging-smText">Please turn off orientation lock</span>
+                        </span>
+                      </>
                     )}
                 </div>
               )}

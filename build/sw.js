@@ -19,7 +19,7 @@ if ('function' === typeof importScripts) {
     workbox.precaching.precacheAndRoute([
   {
     "url": "asset-manifest.json",
-    "revision": "5230cb67f22e5d6979534ab2d786b4da"
+    "revision": "90b661ce093224b738dea2b9fac660c3"
   },
   {
     "url": "favicon.png",
@@ -51,31 +51,31 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "index.html",
-    "revision": "2f25ad27be785b7dd9aadb033795bf57"
+    "revision": "b2781fa860ddf73d9c2a2fb4a0738d1b"
   },
   {
     "url": "manifest.json",
     "revision": "4942aa4c9d8b5297ec5cc39baa980ddc"
   },
   {
-    "url": "precache-manifest.01cd62cd2aeb9f1767ed7d382b2cecd4.js",
-    "revision": "01cd62cd2aeb9f1767ed7d382b2cecd4"
+    "url": "precache-manifest.62770daa9a26be03e861bb48240778c4.js",
+    "revision": "62770daa9a26be03e861bb48240778c4"
   },
   {
     "url": "service-worker.js",
-    "revision": "2141d85e196ec5c78ea67cab1efa204c"
+    "revision": "7e81558f4ea1a0cd85e62b7debcc58ed"
   },
   {
-    "url": "static/css/main.f13cd5c4.chunk.css",
-    "revision": "227b585db006220de4fddd1a77d78bf9"
+    "url": "static/css/main.79b6ebf4.chunk.css",
+    "revision": "dc8714a018885906ae3653453fb7c589"
   },
   {
-    "url": "static/js/2.36b8aaf8.chunk.js",
-    "revision": "05d229189d9a46bfd32ee69bc3d7040f"
+    "url": "static/js/2.02f963ec.chunk.js",
+    "revision": "914dd21955ac087d980de03e77f00e81"
   },
   {
-    "url": "static/js/main.d4a97c59.chunk.js",
-    "revision": "28583a75499c12038d3e8cee6a1b5e90"
+    "url": "static/js/main.4c02085c.chunk.js",
+    "revision": "0e33da1bd5fbd5677d068d432ebcfbac"
   },
   {
     "url": "static/js/runtime~main.a8a9905a.js",
@@ -134,8 +134,8 @@ if ('function' === typeof importScripts) {
     "revision": "686b302ef3501b14d3f58df31e53ef39"
   },
   {
-    "url": "static/media/doc_hudson.da90917b.jpg",
-    "revision": "da90917bc781cb2b3d91b35c25f4f09c"
+    "url": "static/media/doc_hudson.44c7498f.jpg",
+    "revision": "44c7498f5e6a65eddc122fc63df7f950"
   },
   {
     "url": "static/media/donald_duck.d8a3854f.jpg",
@@ -166,8 +166,8 @@ if ('function' === typeof importScripts) {
     "revision": "04100f82cb4034aea5e78a9b1ec307f5"
   },
   {
-    "url": "static/media/flo.88fff3da.jpg",
-    "revision": "88fff3da9959fc94768c3fce949f300d"
+    "url": "static/media/flo.9fe61b25.jpg",
+    "revision": "9fe61b256349561f7dc2c96e0f5ad0ee"
   },
   {
     "url": "static/media/flounder.221bbe8a.jpg",
@@ -188,6 +188,10 @@ if ('function' === typeof importScripts) {
   {
     "url": "static/media/hans.acd04f3a.jpg",
     "revision": "acd04f3a498f03948eae6aa88e8ccb6d"
+  },
+  {
+    "url": "static/media/heihei.ac840290.png",
+    "revision": "ac84029054bff251b36f49aafdeead3a"
   },
   {
     "url": "static/media/iago.1da9b7d9.jpg",
@@ -238,6 +242,10 @@ if ('function' === typeof importScripts) {
     "revision": "6348f896dcdebe59d881deb6614a9692"
   },
   {
+    "url": "static/media/maui.2a2c3202.png",
+    "revision": "2a2c3202f9e7e90ed46d93357e3e3aad"
+  },
+  {
     "url": "static/media/merida.c5067c5d.jpg",
     "revision": "c5067c5d82ea5da4c84297cc07efea5d"
   },
@@ -248,6 +256,10 @@ if ('function' === typeof importScripts) {
   {
     "url": "static/media/minnie_mouse.e057d336.jpg",
     "revision": "e057d336dcd6a872b20debd774810bd5"
+  },
+  {
+    "url": "static/media/moana.17fcc89b.png",
+    "revision": "17fcc89b3cd4243a9013bfb712d54610"
   },
   {
     "url": "static/media/mr._potato_head.874a4cc2.jpg",
