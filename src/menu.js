@@ -64,7 +64,10 @@ class Menu extends Component {
 
     return (
       <div className="Menu">
-        <Logo className="Logo" />
+        <div className="Menu-logoWrap">
+          <Logo className="Logo" />
+          <span className="Menu-siteName">waitupgame.com</span>
+        </div>
         {user && user.email && <div className="">Welcome, {user.email}! <button onClick={this.logout}>Sign Out</button></div>}
         <div className="Menu-board">
           {this.state.buttons.length && this.state.buttons.length === this.props.categories.length &&

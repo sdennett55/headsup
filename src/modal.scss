@@ -94,6 +94,10 @@
     font-size: 2em;
     text-align: center;
     margin: 0 0 .75em;
+
+    &:not(:first-child) {
+      margin-top: 1em;
+    }
   }
   &-subtitle,
   &-label {
