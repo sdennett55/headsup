@@ -149,6 +149,12 @@ class App extends React.Component {
       (this.state.isStaging || this.state.isGameInProgress) &&
       event.acceleration.x > 30
     ) {
+      // Tracking
+      ReactGA.event({
+        category: this.state.activeCollection.name,
+        action: 'Exited Game'
+      });
+
       this.resetGame();
       this.backToMenu();
     }
@@ -268,7 +274,7 @@ class App extends React.Component {
 
     // Track that a game was completed
     ReactGA.event({
-      category: 'Play',
+      category: this.state.activeCollection.name,
       action: 'Game played'
     });
 
@@ -291,7 +297,7 @@ class App extends React.Component {
 
         // Tracking
         ReactGA.event({
-          category: 'Play',
+          category: this.state.activeCollection.name,
           action: 'Correct guess'
         });
       } else {
@@ -299,7 +305,7 @@ class App extends React.Component {
 
         // Tracking
         ReactGA.event({
-          category: 'Play',
+          category: this.state.activeCollection.name,
           action: 'Skipped guess'
         });
       }
@@ -389,15 +395,29 @@ class App extends React.Component {
   };
 
   handleHelpModal = () => {
-    this.setState(prevState => ({
-      isHelpModalOpen: !prevState.isHelpModalOpen
-    }));
+    this.setState(prevState => {
+      if (prevState.isHelpModalOpen) {
+        ReactGA.event({
+          category: this.state.activeCollection.name,
+          action: 'Opened Help Menu'
+        });
+      }
+
+      return { isHelpModalOpen: !prevState.isHelpModalOpen };
+    });
   }
 
   handleSettingsModal = () => {
-    this.setState(prevState => ({
-      isSettingsModalOpen: !prevState.isSettingsModalOpen
-    }));
+    this.setState(prevState => {
+      if (prevState.isSettingsModalOpen) {
+        ReactGA.event({
+          category: this.state.activeCollection.name,
+          action: 'Opened Settings Menu'
+        });
+      }
+
+      return { isSettingsModalOpen: !prevState.isSettingsModalOpen };
+    });
   }
 
   handleSoundEffects = () => {
@@ -472,7 +492,7 @@ class App extends React.Component {
                     </span>
                   ) : (
                       <>
-                        <span className="Staging-text">Place on forehead   
+                        <span className="Staging-text">Place on forehead
                           <span className="Staging-smText">Please turn off orientation lock</span>
                         </span>
                       </>
