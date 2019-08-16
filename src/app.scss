@@ -5,14 +5,14 @@
   font-display: swap;
 }
 
-@keyframes hideThenShow {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+// @keyframes hideThenShow {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }
 
 body,
 p {
@@ -22,7 +22,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  background: #fff;
+  background: #296EB4;
 }
 * {
   box-sizing: border-box;
@@ -39,11 +39,11 @@ body {
   overflow-y: scroll;
 }
 .App {
-  position: relative;
-  z-index: 1;
+  // position: relative;
+  // z-index: 1;
   font-family: "Staatliches", sans-serif;
   text-align: center;
-  background: #296EB4;
+  // min-height: 100vh;
 
   &-followUs {
     color: #0d3157;
@@ -60,15 +60,15 @@ body {
       }
     }
   }
-  &-mickey {
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%);
-    width: 150px;
-    bottom: 10px;
-    opacity: 0;
-    animation: hideThenShow 0s 3s forwards;
-  }
+  // &-mickey {
+  //   position: fixed;
+  //   left: 50%;
+  //   transform: translate(-50%);
+  //   width: 150px;
+  //   bottom: 10px;
+  //   opacity: 0;
+  //   animation: hideThenShow 0s 3s forwards;
+  // }
 }
 
 .Staging {

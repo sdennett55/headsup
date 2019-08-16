@@ -1,13 +1,13 @@
-@keyframes hidePopup {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-}
+// @keyframes hidePopup {
+//   from {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+//   to {
+//     opacity: 0;
+//     transform: translateY(100%);
+//   }
+// }
 
 .Menu {
   &-helpBtn,
@@ -34,13 +34,14 @@
     color: #296eb4;
     font-size: 1em;
     display: flex;
+    flex-direction: column;
     padding: 1em;
     align-items: center;
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,.5);
     font-family: Helvetica;
-    font-weight: bold;
-    animation: hidePopup .5s 10s forwards;
+    text-align: left;
+    // animation: hidePopup .5s 15s forwards;
 
     &::before {
       content: '';
@@ -55,6 +56,9 @@
       border-color: #fff transparent transparent transparent;
     }
   }
+  &-addToHomeScreenBannerText {
+    margin-top: 1em;
+  }
   &-container {
     position: relative;
   }
@@ -63,6 +67,7 @@
     color: #fff;
     padding: .6em 1em .5em;
     font-size: 1.5em;
+    line-height: 1;
   }
   &-logoWrap {
     position: relative;

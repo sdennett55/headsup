@@ -6,14 +6,14 @@ import Game from "./game";
 import LoadingIcon from "./loading_icon";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { ReactComponent as Gear } from './images/gear.svg';
-import { ReactComponent as MickeyIcon } from './svg/mickey.svg';
+// import { ReactComponent as MickeyIcon } from './svg/mickey.svg';
 import HelpModal from './help_modal';
 import SettingsModal from './settings_modal';
 import Login from './auth/login';
 import "./app.scss";
 import fire from "./config/fire";
 import * as serviceWorker from './serviceWorker';
-import { isIOS, isMobile } from "react-device-detect";
+import { isIOS, isMobile, isMobileSafari } from "react-device-detect";
 import ReactGA from 'react-ga';
 
 const DEFAULT_GAME_TIMER = 60;
@@ -52,11 +52,8 @@ class App extends React.Component {
     // this.authListener();
     this.initializeReactGA();
 
-    // Detects if device is in standalone mode
-    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
-
     // Checks if should display install popup notification:
-    if (isIOS && !isInStandaloneMode()) {
+    if (isIOS && isMobileSafari && !this.isInStandaloneMode()) {
       this.setState({ showInstallMessage: true });
     }
 
@@ -96,6 +93,9 @@ class App extends React.Component {
       this.onDeviceMotion(event);
     });
   }
+
+  // Detects if device is in standalone mode
+  isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
 
   fetchData = async () => {
     if (localStorage.getItem('waitup-categories') && !navigator.onLine) {
@@ -436,7 +436,7 @@ class App extends React.Component {
         category: this.state.activeCollection.name,
         action: `Turned sound effects ${prevState.enableSoundEffects ? 'OFF' : 'ON'}`
       });
-      
+
       return { enableSoundEffects: !prevState.enableSoundEffects };
     });
   }
@@ -463,10 +463,14 @@ class App extends React.Component {
                   {!isMobile && (
                     <p className="Menu-banner">Visit us on a mobile or tablet device and add to homescreen to play!</p>
                   )}
+                  {isIOS && !isMobileSafari && !this.isInStandaloneMode() && (
+                    <p className="Menu-banner">Please visit us in Safari in order to install the app to your Home Screen!</p>
+                  )}
                   <div className="Menu-container">
                     {this.state.showInstallMessage && (
                       <div className="Menu-addToHomeScreenBanner">
-                        Click the Share button below and tap "Add to Home Screen" to install!
+                        <p>To play <strong>"Motion &amp; Orientation Access"</strong> must be toggled <strong>ON</strong> in Settings → Safari.</p>
+                        <p class="Menu-addToHomeScreenBannerText">Then, tap the Share button below and select <strong>"Add to Home Screen"</strong> to install!</p>
                       </div>
                     )}
                     <button className="Menu-helpBtn" onClick={this.handleHelpModal}><i className="Menu-helpIcon">?</i></button>
@@ -535,7 +539,6 @@ class App extends React.Component {
               </>
             )}
         </div>
-        {this.state.isMenu && (<div className="App-mickey"><MickeyIcon /></div>)}
         <Route path="/login" component={Login} />
       </Router>
     );
