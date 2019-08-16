@@ -6,6 +6,7 @@ import Game from "./game";
 import LoadingIcon from "./loading_icon";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { ReactComponent as Gear } from './images/gear.svg';
+import { ReactComponent as MickeyIcon } from './svg/mickey.svg';
 import HelpModal from './help_modal';
 import SettingsModal from './settings_modal';
 import Login from './auth/login';
@@ -43,12 +44,21 @@ class App extends React.Component {
     isHelpModalOpen: false,
     isSettingsModalOpen: false,
     enableSoundEffects: false,
-    gameClock: DEFAULT_GAME_TIMER
+    gameClock: DEFAULT_GAME_TIMER,
+    showInstallMessage: false
   };
 
   async componentDidMount() {
     // this.authListener();
     this.initializeReactGA();
+
+    // Detects if device is in standalone mode
+    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+    // Checks if should display install popup notification:
+    if (isIOS && !isInStandaloneMode()) {
+      this.setState({ showInstallMessage: true });
+    }
 
     this.fetchData();
 
@@ -421,12 +431,21 @@ class App extends React.Component {
   }
 
   handleSoundEffects = () => {
-    this.setState(prevState => ({
-      enableSoundEffects: !prevState.enableSoundEffects
-    }));
+    this.setState(prevState => {
+      ReactGA.event({
+        category: this.state.activeCollection.name,
+        action: `Turned sound effects ${prevState.enableSoundEffects ? 'OFF' : 'ON'}`
+      });
+      
+      return { enableSoundEffects: !prevState.enableSoundEffects };
+    });
   }
 
   handleGameClock = num => {
+    ReactGA.event({
+      category: this.state.activeCollection.name,
+      action: `Set game clock to ${num}`
+    });
     this.setState({ gameClock: num, inGameTimer: num });
   }
 
@@ -445,7 +464,7 @@ class App extends React.Component {
                     <p className="Menu-banner">Visit us on a mobile or tablet device and add to homescreen to play!</p>
                   )}
                   <div className="Menu-container">
-                    {isIOS && (
+                    {this.state.showInstallMessage && (
                       <div className="Menu-addToHomeScreenBanner">
                         Click the Share button below and tap "Add to Home Screen" to install!
                       </div>
@@ -516,6 +535,7 @@ class App extends React.Component {
               </>
             )}
         </div>
+        {this.state.isMenu && (<div className="App-mickey"><MickeyIcon /></div>)}
         <Route path="/login" component={Login} />
       </Router>
     );
