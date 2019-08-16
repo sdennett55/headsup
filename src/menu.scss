@@ -13,6 +13,15 @@
     box-shadow: 0 0 8px rgba(0,0,0,.1);
     margin: 0;
   }
+  &-container {
+    position: relative;
+  }
+  &-banner {
+    background: #ea2c2c;
+    color: #fff;
+    padding: .6em 1em .5em;
+    font-size: 1.5em;
+  }
   &-logoWrap {
     position: relative;
     margin-bottom: 1em;
