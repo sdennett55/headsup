@@ -445,6 +445,11 @@ class App extends React.Component {
                     <p className="Menu-banner">Visit us on a mobile or tablet device and add to homescreen to play!</p>
                   )}
                   <div className="Menu-container">
+                    {isIOS && (
+                      <div className="Menu-addToHomeScreenBanner">
+                        Click the Share button below and tap "Add to Home Screen" to install!
+                      </div>
+                    )}
                     <button className="Menu-helpBtn" onClick={this.handleHelpModal}><i className="Menu-helpIcon">?</i></button>
                     <button className="Menu-settingsBtn" onClick={this.handleSettingsModal}><Gear className="hey" /></button>
                     <Menu
