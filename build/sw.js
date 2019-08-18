@@ -19,7 +19,7 @@ if ('function' === typeof importScripts) {
     workbox.precaching.precacheAndRoute([
   {
     "url": "asset-manifest.json",
-    "revision": "301b6001ab559e6dd288751291e606d4"
+    "revision": "cc12400e0192b639d81e355ba17a3a55"
   },
   {
     "url": "favicon.png",
@@ -51,31 +51,31 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "index.html",
-    "revision": "55883a6b4a8d8573a0f672a42aed046c"
+    "revision": "51dc29e16421c7ed10952f1f37cac31d"
   },
   {
     "url": "manifest.json",
     "revision": "4942aa4c9d8b5297ec5cc39baa980ddc"
   },
   {
-    "url": "precache-manifest.4e7f6b446d74bf832c7ba4d11c20bdf3.js",
-    "revision": "4e7f6b446d74bf832c7ba4d11c20bdf3"
+    "url": "precache-manifest.415ee5bcf0ff8eb065b377780b111fb0.js",
+    "revision": "415ee5bcf0ff8eb065b377780b111fb0"
   },
   {
     "url": "service-worker.js",
-    "revision": "48a0175683de1495595861b6e3a2a7e7"
+    "revision": "b3ed0345220531bf3f5580d799164284"
   },
   {
-    "url": "static/css/main.a4b27df5.chunk.css",
-    "revision": "75661c1f7653fecc6fea351132d3dd2f"
+    "url": "static/css/main.49431a36.chunk.css",
+    "revision": "f5cd0c8e9ab64d6ec8232795d81640d2"
   },
   {
-    "url": "static/js/2.da250963.chunk.js",
-    "revision": "6752d215aa7ccd30c19f4e6b655e5608"
+    "url": "static/js/2.b95525b4.chunk.js",
+    "revision": "1198b99bb6206cc9931bb1ebaa708f99"
   },
   {
-    "url": "static/js/main.66e06edf.chunk.js",
-    "revision": "4f39fa1b974d3279611bfe230cd7c7cc"
+    "url": "static/js/main.d1c41cb8.chunk.js",
+    "revision": "5cfbdb0714f569996ae8906fe81442c3"
   },
   {
     "url": "static/js/runtime~main.a8a9905a.js",
@@ -414,6 +414,9 @@ if ('function' === typeof importScripts) {
     "revision": "b5143896e64e7fdc0b1879d890a5fc7f"
   }
 ]);
+
+    /* offline analytics */
+    workbox.googleAnalytics.initialize(); 
 
     /* custom cache rules*/
     workbox.routing.registerRoute(

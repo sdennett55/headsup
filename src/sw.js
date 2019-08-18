@@ -18,6 +18,9 @@ if ('function' === typeof importScripts) {
     /* injection point for manifest files.  */
     workbox.precaching.precacheAndRoute([]);
 
+    /* offline analytics */
+    workbox.googleAnalytics.initialize(); 
+
     /* custom cache rules*/
     workbox.routing.registerRoute(
       new RegExp('/static/css.*/'),

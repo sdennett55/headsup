@@ -13,7 +13,7 @@ import Login from './auth/login';
 import "./app.scss";
 import fire from "./config/fire";
 import * as serviceWorker from './serviceWorker';
-import { isIOS, isMobile, isMobileSafari } from "react-device-detect";
+import { isIOS, isMobile, isMobileSafari, osVersion } from "react-device-detect";
 import ReactGA from 'react-ga';
 
 const DEFAULT_GAME_TIMER = 60;
@@ -45,7 +45,8 @@ class App extends React.Component {
     isSettingsModalOpen: false,
     enableSoundEffects: false,
     gameClock: DEFAULT_GAME_TIMER,
-    showInstallMessage: false
+    showInstallMessage: false,
+    logLastItemAsSkipped: true
   };
 
   async componentDidMount() {
@@ -242,7 +243,7 @@ class App extends React.Component {
     clearInterval(START_COUNTDOWN_INTERVAL);
     clearInterval(GAME_COUNTDOWN_INTERVAL);
     // If times runs out, lets log that active item as skipped
-    if (this.state.activeItem !== undefined) {
+    if (this.state.activeItem !== undefined && this.state.logLastItemAsSkipped) {
       this.setState(prevState => ({
         finalAnswers: [
           ...prevState.finalAnswers,
@@ -265,7 +266,8 @@ class App extends React.Component {
       isStaging: false,
       isGameOver: false,
       isResults: true,
-      isAnimating: ''
+      isAnimating: '',
+      logLastItemAsSkipped: true
     }));
   };
 
@@ -293,6 +295,10 @@ class App extends React.Component {
 
   makeDecision = decision => {
     if (decision) {
+      // if a decision was made within the last second, don't log the next item as skipped.
+      if (this.state.inGameTimer <= 1) {
+        this.setState({ logLastItemAsSkipped: false });
+      }
       this.setState(prevState => ({
         finalAnswers: [
           ...prevState.finalAnswers,
@@ -449,6 +455,20 @@ class App extends React.Component {
     this.setState({ gameClock: num, inGameTimer: num });
   }
 
+  getBanner = () => {
+    if (!isMobile) {
+      return 'Visit us on a mobile or tablet device and add to homescreen to play!';
+    }
+    if (isIOS && osVersion >= 13) {
+      return 'iOS13+ users: Please use Chrome to play the game, as Safari no longer supports motion events.'
+    }
+    if (isIOS && !isMobileSafari && !this.isInStandaloneMode()) {
+      return 'Please visit us in Safari in order to install the app to your Home Screen!';
+    }
+
+    return null;
+  }
+
   render() {
     return (
       <Router>
@@ -460,11 +480,8 @@ class App extends React.Component {
                   {this.state.isHelpModalOpen && (
                     <HelpModal handleModalClose={this.handleHelpModal} />
                   )}
-                  {!isMobile && (
-                    <p className="Menu-banner">Visit us on a mobile or tablet device and add to homescreen to play!</p>
-                  )}
-                  {isIOS && !isMobileSafari && !this.isInStandaloneMode() && (
-                    <p className="Menu-banner">Please visit us in Safari in order to install the app to your Home Screen!</p>
+                  {!!this.getBanner() && (
+                    <p className="Menu-banner">{this.getBanner()}</p>
                   )}
                   <div className="Menu-container">
                     {this.state.showInstallMessage && (

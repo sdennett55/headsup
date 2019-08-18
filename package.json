@@ -22,6 +22,7 @@
     "react-sound": "^1.2.0",
     "react-stripe-elements": "^3.0.0",
     "stripe": "^7.1.0",
+    "sw-offline-google-analytics": "0.0.25",
     "workbox-window": "^4.3.1"
   },
   "devDependencies": {
