@@ -1,6 +1,5 @@
 import React from 'react';
 import Modal from './modal';
-import { isIOS } from "react-device-detect";
 
 const SettingsModal = ({ handleModalClose, handleSoundEffects, enableSoundEffects, closeBtnRight, handleGameClock, gameClock }) => {
   return (
@@ -15,14 +14,10 @@ const SettingsModal = ({ handleModalClose, handleSoundEffects, enableSoundEffect
         <input id="game_clock_120" className="Modal-radioBtn" type="radio" name="game_clock" value="120" onChange={() => handleGameClock(120)} checked={gameClock === 120} />
         <label for="game_clock_120" className="Modal-radioLabel">120</label>
       </div>
-      {!isIOS && (
-        <>
-          <div className="Modal-flexWrap">
-            <label for="sound_effects" className="Modal-label">Enable Sound Effects:</label>
-            <input id="sound_effects" className="Modal-checkBox" type="checkbox" onChange={handleSoundEffects} checked={enableSoundEffects} />
-          </div>
-        </>
-      )}
+      <div className="Modal-flexWrap">
+        <label for="sound_effects" className="Modal-label">Enable Sound Effects:</label>
+        <input id="sound_effects" className="Modal-checkBox" type="checkbox" onChange={handleSoundEffects} checked={enableSoundEffects} />
+      </div>
     </Modal>
   )
 }

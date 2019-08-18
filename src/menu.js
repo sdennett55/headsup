@@ -36,6 +36,13 @@ class Menu extends Component {
   }
 
   toggleBtn = cat => {
+    if (this.props.enableSoundEffects) {
+      // silently initialize sounds to be used because iOS demands an action before an audio file plays
+      // this is a hack around that
+      this.props.soundFile.src = '';
+      this.props.soundFile.play();
+    }
+
     const newBtnState = [...this.state.buttons];
     const currentBtn = newBtnState.findIndex(x => x.name === cat.name);
     newBtnState.forEach((x, i) =>

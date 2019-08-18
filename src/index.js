@@ -22,6 +22,8 @@ const START_TIMER = 3;
 let GAME_COUNTDOWN_INTERVAL;
 let START_COUNTDOWN_INTERVAL;
 
+let SOUND_FILE = new Audio();
+
 class App extends React.Component {
   state = {
     isMenu: true,
@@ -496,6 +498,7 @@ class App extends React.Component {
                       getActiveCat={this.getActiveCat}
                       categories={this.state.categories}
                       user={this.state.user}
+                      soundFile={SOUND_FILE}
                     />
                   </div>
                   <p className="App-followUs">Follow on instagram: <a href="https://instagram.com/waitupgame">@waitupgame</a></p>
@@ -523,6 +526,7 @@ class App extends React.Component {
                   isAnimating={this.state.isAnimating}
                   removeAnimationClasses={this.removeAnimationClasses}
                   enableSoundEffects={this.state.enableSoundEffects}
+                  soundFile={SOUND_FILE}
                 />
               )}
               {this.state.isResults && (
