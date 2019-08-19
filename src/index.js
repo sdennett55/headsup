@@ -55,6 +55,8 @@ class App extends React.Component {
     // this.authListener();
     this.initializeReactGA();
 
+    this.getLocalStorageSettings();
+
     // Checks if should display install popup notification:
     if (isIOS && isMobileSafari && !this.isInStandaloneMode()) {
       this.setState({ showInstallMessage: true });
@@ -95,6 +97,16 @@ class App extends React.Component {
     window.removeEventListener("devicemotion", event => {
       this.onDeviceMotion(event);
     });
+  }
+
+  getLocalStorageSettings = () => {
+    if (localStorage.getItem('waitup-hasSoundEffects')) {
+      this.setState({ enableSoundEffects: JSON.parse(localStorage.getItem('waitup-hasSoundEffects')) });
+    }
+    if (localStorage.getItem('waitup-gameClock')) {
+      const localGameClock = parseInt(localStorage.getItem('waitup-gameClock'));
+      this.setState({ gameClock: localGameClock, inGameTimer: localGameClock });
+    }
   }
 
   // Detects if device is in standalone mode
@@ -445,6 +457,8 @@ class App extends React.Component {
         action: `Turned sound effects ${prevState.enableSoundEffects ? 'OFF' : 'ON'}`
       });
 
+      localStorage.setItem('waitup-hasSoundEffects', !prevState.enableSoundEffects);
+
       return { enableSoundEffects: !prevState.enableSoundEffects };
     });
   }
@@ -454,6 +468,9 @@ class App extends React.Component {
       category: this.state.activeCollection.name,
       action: `Set game clock to ${num}`
     });
+
+    localStorage.setItem('waitup-gameClock', num);
+
     this.setState({ gameClock: num, inGameTimer: num });
   }
 
@@ -499,6 +516,7 @@ class App extends React.Component {
                       categories={this.state.categories}
                       user={this.state.user}
                       soundFile={SOUND_FILE}
+                      enableSoundEffects={this.state.enableSoundEffects}
                     />
                   </div>
                   <p className="App-followUs">Follow on instagram: <a href="https://instagram.com/waitupgame">@waitupgame</a></p>
