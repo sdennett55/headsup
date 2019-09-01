@@ -19,7 +19,7 @@ if ('function' === typeof importScripts) {
     workbox.precaching.precacheAndRoute([
   {
     "url": "asset-manifest.json",
-    "revision": "a4aa718edaddd583d671392113aae5ac"
+    "revision": "73e74ac2e46c48b740ab18085aa2cd9c"
   },
   {
     "url": "favicon.png",
@@ -51,19 +51,19 @@ if ('function' === typeof importScripts) {
   },
   {
     "url": "index.html",
-    "revision": "1bfd40b901973dc398134b0e864bbdeb"
+    "revision": "f5c26ee8546a7ccb8004f6a7bed4e63b"
   },
   {
     "url": "manifest.json",
     "revision": "4942aa4c9d8b5297ec5cc39baa980ddc"
   },
   {
-    "url": "precache-manifest.554072411654a598340f294169afed0c.js",
-    "revision": "554072411654a598340f294169afed0c"
+    "url": "precache-manifest.5ae43097e809a0e50ae09a40a319643f.js",
+    "revision": "5ae43097e809a0e50ae09a40a319643f"
   },
   {
     "url": "service-worker.js",
-    "revision": "220d85f6def37f7dfed9561183592f4e"
+    "revision": "0a6166c16328d62e9b5172cc3ba3ab53"
   },
   {
     "url": "static/css/main.88645aa4.chunk.css",
@@ -74,8 +74,8 @@ if ('function' === typeof importScripts) {
     "revision": "33e37cdc5aaf1ffe612887b774fe67a3"
   },
   {
-    "url": "static/js/main.e1b78a9f.chunk.js",
-    "revision": "7990e1cd73bff8cedc75de58877d0ea3"
+    "url": "static/js/main.02b7ca92.chunk.js",
+    "revision": "e1ac407bd10d2b46b4134497d50f9499"
   },
   {
     "url": "static/js/runtime~main.a8a9905a.js",
@@ -86,6 +86,10 @@ if ('function' === typeof importScripts) {
     "revision": "88f42cbb4d2a11e3d49c437bb45cdd4a"
   },
   {
+    "url": "static/media/alice.6f4f5919.png",
+    "revision": "6f4f5919bd34c22adb026b36f28f2845"
+  },
+  {
     "url": "static/media/aliens.69285c00.jpg",
     "revision": "69285c00c64feb6e90bfc119e8fdadf2"
   },
@@ -94,16 +98,28 @@ if ('function' === typeof importScripts) {
     "revision": "7de015e65d8b082f16156eaad8a0bad6"
   },
   {
-    "url": "static/media/ariel.a0b4e0d5.jpg",
-    "revision": "a0b4e0d515d94c274b0c290dab2df13b"
+    "url": "static/media/ariel.b0297f79.png",
+    "revision": "b0297f79adac2ed02bc7d973fa7e6078"
   },
   {
-    "url": "static/media/aurora.2db5c8e9.jpg",
-    "revision": "2db5c8e9041dd6ae09bf5ec0573a8492"
+    "url": "static/media/aurora.9f571935.png",
+    "revision": "9f5719352f020e7f21a4d35546c56ffa"
   },
   {
-    "url": "static/media/beauty.e1689a95.jpg",
+    "url": "static/media/bambi.c91fe250.png",
+    "revision": "c91fe250ab65258bb95bb12205a9b2ab"
+  },
+  {
+    "url": "static/media/belle.e1689a95.jpg",
     "revision": "e1689a955c95e00cdf049ce1acc300d9"
+  },
+  {
+    "url": "static/media/bo_peep.bd79a738.png",
+    "revision": "bd79a7387138686caf6c51b6b1d7f5ab"
+  },
+  {
+    "url": "static/media/boo.d67430aa.png",
+    "revision": "d67430aadbab9b6006eb56dd0e133ff3"
   },
   {
     "url": "static/media/bruce.161612ae.jpg",
@@ -126,16 +142,16 @@ if ('function' === typeof importScripts) {
     "revision": "17492c8ed88ebb202e4dd151489ae470"
   },
   {
+    "url": "static/media/cinderella.e2173068.jpg",
+    "revision": "e21730688d58cc5782b796c4e5c1ef42"
+  },
+  {
     "url": "static/media/crush.a4d8e327.jpg",
     "revision": "a4d8e3272081b5bc5934c64c588c865d"
   },
   {
     "url": "static/media/daisy_duck.686b302e.jpg",
     "revision": "686b302ef3501b14d3f58df31e53ef39"
-  },
-  {
-    "url": "static/media/doc_hudson.44c7498f.jpg",
-    "revision": "44c7498f5e6a65eddc122fc63df7f950"
   },
   {
     "url": "static/media/donald_duck.d8a3854f.jpg",
@@ -160,14 +176,6 @@ if ('function' === typeof importScripts) {
   {
     "url": "static/media/fawn.9f550422.jpg",
     "revision": "9f550422f544413eaef95c8b4694a1bd"
-  },
-  {
-    "url": "static/media/fillmore.04100f82.jpg",
-    "revision": "04100f82cb4034aea5e78a9b1ec307f5"
-  },
-  {
-    "url": "static/media/flo.9fe61b25.jpg",
-    "revision": "9fe61b256349561f7dc2c96e0f5ad0ee"
   },
   {
     "url": "static/media/flounder.221bbe8a.jpg",
@@ -230,16 +238,16 @@ if ('function' === typeof importScripts) {
     "revision": "635eceab1bd49b352ea23f0427006b38"
   },
   {
-    "url": "static/media/luigi.b8aa9f39.jpg",
-    "revision": "b8aa9f394c9bd3ff05e6b4897e09ac8f"
+    "url": "static/media/lilo.e9a13cf3.png",
+    "revision": "e9a13cf32b98e8468d32e22535201a12"
+  },
+  {
+    "url": "static/media/maleficent.851e13a6.png",
+    "revision": "851e13a6941b01ec821ba29a224f70b7"
   },
   {
     "url": "static/media/marshmallow.4373fe08.jpg",
     "revision": "4373fe08844acc8923d7db1261d93127"
-  },
-  {
-    "url": "static/media/mater.6348f896.jpg",
-    "revision": "6348f896dcdebe59d881deb6614a9692"
   },
   {
     "url": "static/media/maui.2a2c3202.png",
@@ -270,12 +278,12 @@ if ('function' === typeof importScripts) {
     "revision": "69df0131f5d0ddfe1e9c2c59d34d3987"
   },
   {
-    "url": "static/media/mulan.67e20a0c.jpg",
-    "revision": "67e20a0c29724f35727f9d5e17748046"
+    "url": "static/media/mulan.fd01b49f.png",
+    "revision": "fd01b49fa6d6febd2244941c2e5ddea7"
   },
   {
-    "url": "static/media/nala.58ac4751.jpg",
-    "revision": "58ac475112e77005d1978dbbcfe1db4f"
+    "url": "static/media/nala.4bf4728e.png",
+    "revision": "4bf4728e6bbae782fea53a7a190b7ccf"
   },
   {
     "url": "static/media/oaken.13faf1cf.jpg",
@@ -298,6 +306,10 @@ if ('function' === typeof importScripts) {
     "revision": "1da58ba00aa2f541baa8e20a4e57bee9"
   },
   {
+    "url": "static/media/pocahontas.5c549976.png",
+    "revision": "5c5499765cd6f19e3c5889f9f65f8ca0"
+  },
+  {
     "url": "static/media/prince_eric.9e2c74e9.jpg",
     "revision": "9e2c74e9216875f1d69801e9e42b4f31"
   },
@@ -318,12 +330,8 @@ if ('function' === typeof importScripts) {
     "revision": "2da4e760150a8c8c97fc70d870770810"
   },
   {
-    "url": "static/media/ramone.c1de53d5.jpg",
-    "revision": "c1de53d5408d775563220d3cfefef44e"
-  },
-  {
-    "url": "static/media/rapunzel.10e397f6.jpg",
-    "revision": "10e397f683bf0174be656d0b36e58fc1"
+    "url": "static/media/rapunzel.09251ead.png",
+    "revision": "09251eadc14e092df06bd15d87a090f6"
   },
   {
     "url": "static/media/rex.999c68a0.jpg",
@@ -332,14 +340,6 @@ if ('function' === typeof importScripts) {
   {
     "url": "static/media/rosetta.dfe4d275.jpg",
     "revision": "dfe4d27565aa9456b42034b59e4c8734"
-  },
-  {
-    "url": "static/media/sally.bbe3b383.jpg",
-    "revision": "bbe3b383ea2cb5639a23ee7b47215861"
-  },
-  {
-    "url": "static/media/sarge.0c5ad1f6.jpg",
-    "revision": "0c5ad1f6e6a13cad6ba1d4e2fea944c4"
   },
   {
     "url": "static/media/scar.3c6051aa.jpg",
@@ -362,8 +362,8 @@ if ('function' === typeof importScripts) {
     "revision": "d1ea1b6b2e2c3bf41690ffcb922797bb"
   },
   {
-    "url": "static/media/snow_white.ab8db16d.jpg",
-    "revision": "ab8db16d5a8e60646fae050f740779f5"
+    "url": "static/media/snow_white.114f627c.png",
+    "revision": "114f627cec750484547998fe381831e4"
   },
   {
     "url": "static/media/snowgies.178925fb.jpg",
@@ -386,8 +386,8 @@ if ('function' === typeof importScripts) {
     "revision": "a778c1f6e0d6d8e18c3c3223b091097c"
   },
   {
-    "url": "static/media/tiana.fcb1513f.jpg",
-    "revision": "fcb1513f208b0c7ef64ae02f86776b17"
+    "url": "static/media/tiana.9d3ec750.png",
+    "revision": "9d3ec7500cb51d8ec315411450b8052b"
   },
   {
     "url": "static/media/tigger.dd28af6b.jpg",
@@ -396,6 +396,10 @@ if ('function' === typeof importScripts) {
   {
     "url": "static/media/timon.243dfc88.jpg",
     "revision": "243dfc886d78b92d2e4a71837c19f671"
+  },
+  {
+    "url": "static/media/tinker_bell.f725d008.png",
+    "revision": "f725d008d4d1a2e26802ec5d42f19b9a"
   },
   {
     "url": "static/media/ursula.ffcb3610.jpg",
