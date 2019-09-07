@@ -39,8 +39,10 @@ class Menu extends Component {
     if (this.props.enableSoundEffects) {
       // silently initialize sounds to be used because iOS demands an action before an audio file plays
       // this is a hack around that
+      this.props.countdownSound.src = '';
       this.props.soundFile.src = '';
       this.props.soundFile.play();
+      this.props.countdownSound.play();
     }
 
     const newBtnState = [...this.state.buttons];

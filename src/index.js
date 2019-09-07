@@ -23,6 +23,7 @@ let GAME_COUNTDOWN_INTERVAL;
 let START_COUNTDOWN_INTERVAL;
 
 let SOUND_FILE = new Audio();
+let COUNTDOWN_SOUND = new Audio();
 
 class App extends React.Component {
   state = {
@@ -328,7 +329,8 @@ class App extends React.Component {
         // Tracking
         ReactGA.event({
           category: this.state.activeCollection.name,
-          action: 'Correct guess'
+          action: 'Correct guess',
+          label: this.state.activeItem
         });
       } else {
         this.setState({ isAnimating: "skip" });
@@ -336,7 +338,8 @@ class App extends React.Component {
         // Tracking
         ReactGA.event({
           category: this.state.activeCollection.name,
-          action: 'Skipped guess'
+          action: 'Skipped guess',
+          label: this.state.activeItem
         });
       }
     }
@@ -515,6 +518,7 @@ class App extends React.Component {
                       getActiveCat={this.getActiveCat}
                       categories={this.state.categories}
                       user={this.state.user}
+                      countdownSound={COUNTDOWN_SOUND}
                       soundFile={SOUND_FILE}
                       enableSoundEffects={this.state.enableSoundEffects}
                     />
@@ -545,6 +549,7 @@ class App extends React.Component {
                   removeAnimationClasses={this.removeAnimationClasses}
                   enableSoundEffects={this.state.enableSoundEffects}
                   soundFile={SOUND_FILE}
+                  countdownSound={COUNTDOWN_SOUND}
                 />
               )}
               {this.state.isResults && (

@@ -1,13 +1,17 @@
 import React from "react";
 import correctSound from './sounds/sound_correct.mp3';
 import skipSound from './sounds/sound_skip.mp3';
+import countdownSoundFile from './sounds/countdown.mp3';
 import cx from "classnames";
+import { isIOS } from "react-device-detect";
 import "./game.scss";
 import { hash } from "./images";
 
 const removeUnderscores = str => str.replace(/_/g, ' ');
 
 const toMMSS = s => (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s;
+
+const countdownStartTime = isIOS ? 12 : 11;
 
 class Game extends React.Component {
 
@@ -16,10 +20,15 @@ class Game extends React.Component {
       if (prevProps.isAnimating === "correct") {
         this.props.soundFile.src = correctSound;
         this.props.soundFile.play();
-      } else {
+      }
+      if (prevProps.isAnimating === "skip") {
         this.props.soundFile.src = skipSound;
         this.props.soundFile.play();
       }
+    }
+    if (prevProps.inGameTimer === countdownStartTime) {
+      this.props.countdownSound.src = countdownSoundFile;
+      this.props.countdownSound.play();
     }
   }
 
@@ -29,8 +38,7 @@ class Game extends React.Component {
       inGameTimer,
       activeItem,
       isAnimating,
-      removeAnimationClasses,
-      enableSoundEffects
+      removeAnimationClasses
     } = this.props;
 
     const lessThanTen = inGameTimer < 10;
