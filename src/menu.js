@@ -36,6 +36,7 @@ class Menu extends Component {
   }
 
   toggleBtn = cat => {
+    this.props.getDeviceOrientationPermission();
     if (this.props.enableSoundEffects) {
       // silently initialize sounds to be used because iOS demands an action before an audio file plays
       // this is a hack around that

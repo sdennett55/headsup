@@ -49,7 +49,9 @@ class App extends React.Component {
     enableSoundEffects: false,
     gameClock: DEFAULT_GAME_TIMER,
     showInstallMessage: false,
-    logLastItemAsSkipped: true
+    logLastItemAsSkipped: true,
+    deviceOrientationPermission: false,
+    deviceMotionPermission: false
   };
 
   async componentDidMount() {
@@ -67,13 +69,15 @@ class App extends React.Component {
 
     window.addEventListener("orientationchange", this.onOrientationChange);
 
-    window.addEventListener(
-      "deviceorientation",
-      event => {
-        this.onDeviceOrientation(event);
-      },
-      true
-    );
+    if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
+      window.addEventListener(
+        "deviceorientation",
+        event => {
+          this.onDeviceOrientation(event);
+        },
+        true
+      );
+    }
 
     window.addEventListener("devicemotion", event => {
       this.onDeviceMotion(event);
@@ -88,16 +92,40 @@ class App extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener("orientationchange", this.onOrientationChange);
-    window.removeEventListener(
-      "deviceorientation",
-      event => {
-        this.onDeviceOrientation(event);
-      },
-      true
-    );
+    if (typeof DeviceOrientationEvent.requestPermission !== 'function') {
+      window.removeEventListener(
+        "deviceorientation",
+        event => {
+          this.onDeviceOrientation(event);
+        },
+        true
+      );
+    }
+
     window.removeEventListener("devicemotion", event => {
       this.onDeviceMotion(event);
     });
+  }
+
+  getDeviceOrientationPermission = () => {
+    if (typeof DeviceOrientationEvent.requestPermission === 'function' && !this.state.deviceOrientationPermission) {
+      DeviceOrientationEvent.requestPermission()
+      .then(response => {
+        if (response == 'granted') {
+          this.setState({deviceOrientationPermission: true});
+          window.addEventListener(
+            "deviceorientation",
+            event => {
+              this.onDeviceOrientation(event);
+            },
+            true
+          );
+        } else {
+          alert('You will not be able to play this game without allowing this. Please clear browser cache/data and accept again.');
+        }
+      })
+      .catch(error => alert(error));
+    }
   }
 
   getLocalStorageSettings = () => {
@@ -481,9 +509,6 @@ class App extends React.Component {
     if (!isMobile) {
       return 'Visit us on a mobile or tablet device and add to homescreen to play!';
     }
-    if (isIOS && osVersion >= 13) {
-      return 'iOS13+ users: Please use Chrome to play the game, as Safari no longer supports motion events.'
-    }
     if (isIOS && !isMobileSafari && !this.isInStandaloneMode()) {
       return 'Please visit us in Safari in order to install the app to your Home Screen!';
     }
@@ -508,8 +533,14 @@ class App extends React.Component {
                   <div className="Menu-container">
                     {this.state.showInstallMessage && (
                       <div className="Menu-addToHomeScreenBanner">
-                        <p>To play <strong>"Motion &amp; Orientation Access"</strong> must be toggled <strong>ON</strong> in Settings → Safari.</p>
-                        <p class="Menu-addToHomeScreenBannerText">Then, tap the Share button below and select <strong>"Add to Home Screen"</strong> to install!</p>
+                        {parseInt(osVersion.split('').filter((_, i) => i < 2).join('')) >= 13 ? (
+                          <p>Once you select a deck and accept our request, tap the Share button below and select <strong>"Add to Home Screen"</strong> to install!</p>
+                        ) : (
+                          <>
+                            <p>To play <strong>"Motion &amp; Orientation Access"</strong> must be toggled <strong>ON</strong> in Settings → Safari.</p>
+                            <p class="Menu-addToHomeScreenBannerText">Then, tap the Share button below and select <strong>"Add to Home Screen"</strong> to install!</p>
+                          </>
+                        )}
                       </div>
                     )}
                     <button className="Menu-helpBtn" onClick={this.handleHelpModal}><i className="Menu-helpIcon">?</i></button>
@@ -521,6 +552,7 @@ class App extends React.Component {
                       countdownSound={COUNTDOWN_SOUND}
                       soundFile={SOUND_FILE}
                       enableSoundEffects={this.state.enableSoundEffects}
+                      getDeviceOrientationPermission={this.getDeviceOrientationPermission}
                     />
                   </div>
                   <p className="App-followUs">Follow on instagram: <a href="https://instagram.com/waitupgame">@waitupgame</a></p>

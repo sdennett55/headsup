@@ -9,10 +9,10 @@ const HelpModal = ({ handleModalClose }) => {
       <p className="Modal-subtitle">How to Install</p>
       {isIOS ? (
         <>
-          {Math.floor(osVersion) >= 13 ? (
+          {parseInt(osVersion.split('').filter((_, i) => i < 2).join('')) >= 13 ? (
             <>
-              <p className="Modal-copy">iOS 13 users, add to homescreen from Chrome, Safari will no longer register motion events.</p>
-              <p className="Modal-copy">Open the app from your home screen and enjoy!</p>
+              <p className="Modal-copy">Select any deck on the homescreen and accept our request for motion and orientation access.</p>
+              <p className="Modal-copy">Add the app from Safari to your home screen and enjoy!</p>
             </>
           ) : (
               <>
