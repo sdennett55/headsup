@@ -2,7 +2,7 @@
 
 Check it out on mobile or tablet and add to homescreen: https://waitupgame.com
 
-This React mobile web app is inspired by the native iOS and Android game,[_"Heads Up!"_][1]
+This React mobile/tablet web app is inspired by the native iOS and Android game,[_Heads Up!_][1]
 
 ## Introduction
 
@@ -11,8 +11,8 @@ I find the mobile game _"Heads Up!"_ to be really fun to play in group settings.
 - Repeat cards in a session
 - \$1.00 or more per deck
 - No offline support
-- Not kid friendly
-- Camera recording during play
+- Not very kid friendly
+- Camera records during play
 - Great to play while waiting in line at Disney theme parks but only one Disney deck.
 
 #### Solutions:
@@ -29,8 +29,8 @@ I find the mobile game _"Heads Up!"_ to be really fun to play in group settings.
 Almost exactly like the original:
 
 - Choose a deck
-- Place phone on forehead and wait for game to start
-- Tilt phone down for correct, up for skip
+- Place device on forehead and wait for game to start
+- Tilt device down for correct, up for skip
 - **Shake your device to exit the game at any time**
 
 [1]: https://www.warnerbros.com/games-and-apps/heads/
