@@ -32,3 +32,5 @@ Almost exactly like the original:
 - Place phone on forehead and wait for game to start
 - Tilt phone down for correct, up for skip
 - **Shake your device to exit the game at any time**
+
+[1]: https://www.warnerbros.com/games-and-apps/heads/
