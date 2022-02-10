@@ -10,7 +10,7 @@
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "firebase": "^6.1.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "react": "^16.5.2",
     "react-device-detect": "^1.6.2",
     "react-dom": "^16.5.2",
