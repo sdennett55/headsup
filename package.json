@@ -28,7 +28,7 @@
   "devDependencies": {
     "concurrently": "^4.1.0",
     "prettier": "^1.18.2",
-    "sharp": "^0.23.0",
+    "sharp": "^0.30.5",
     "workbox-build": "^4.3.1"
   },
   "scripts": {
